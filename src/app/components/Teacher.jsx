@@ -38,7 +38,7 @@ const Teacher = () => {
           />
           <div className="w-full">
             <h2 className="mx-auto text-center text-2xl my-2 font-bold hover:text-red-600">
-              <Link href="/instructor">Instructor</Link>
+              <Link href="/coordinator">Instructor</Link>
             </h2>
             <p className="text-pretty">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
