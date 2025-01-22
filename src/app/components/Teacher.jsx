@@ -18,7 +18,7 @@ const Teacher = () => {
           />
           <div className="w-full">
             <h2 className="mx-auto text-center text-2xl my-2 font-bold hover:text-red-600">
-              <Link href="/management/coordinator">Coordinator</Link>
+              <Link href="/coordinator">Coordinator</Link>
             </h2>
             <p className="text-pretty">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -38,7 +38,7 @@ const Teacher = () => {
           />
           <div className="w-full">
             <h2 className="mx-auto text-center text-2xl my-2 font-bold hover:text-red-600">
-              <Link href="/management/instructor">Instructor</Link>
+              <Link href="/instructor">Instructor</Link>
             </h2>
             <p className="text-pretty">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -59,7 +59,7 @@ const Teacher = () => {
           />
           <div className="w-full">
             <h2 className="mx-auto text-center text-2xl my-2 font-bold hover:text-red-600">
-              <Link href="/management/coordinator">Coordinator</Link>
+              <Link href="/coordinator">Coordinator</Link>
             </h2>
             <p className="text-pretty">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
