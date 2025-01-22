@@ -10,9 +10,9 @@ const menuItems = [
     label: "COURSE",
     key: "Submenu1",
     children: [
-      { label: "Long Intensive Course", key: "13", href: "/course/long" },
-      { label: "Short Intensive Course", key: "14", href: "/course/short" },
-      { label: "Private Course", key: "15", href: "/course/private" },
+      { label: "Long Intensive Course", key: "13", href: "/" },
+      { label: "Short Intensive Course", key: "14", href: "/" },
+      { label: "Private Course", key: "15", href: "/" },
     ],
   },
   { label: "NOTICE", key: "3", href: "/notice" },
