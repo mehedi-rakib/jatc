@@ -26,7 +26,7 @@ export const Instructor = () => {
         }
       >
         <Title level={3} className="text-center">
-          John Doe
+        Golam Kibriabhuiyan
         </Title>
         <Paragraph className="text-center text-gray-600 italic mb-4">
           "Empowering minds through knowledge and mentorship."

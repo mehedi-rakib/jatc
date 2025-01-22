@@ -26,7 +26,7 @@ const Coordinator = () => {
         }
       >
         <Title level={3} className="text-center">
-          Jane Smith
+        Golam Kibriabhuiyan
         </Title>
         <Paragraph className="text-center text-gray-600 italic mb-4">
           "Ensuring smooth operations for seamless learning experiences."
