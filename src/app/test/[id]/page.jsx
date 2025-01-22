@@ -1,5 +1,4 @@
 "use client";
-import RootLayout from "src/app/components/Layout/RootLayout";
 import { useParams } from "next/navigation";
 import Test1 from "src/app/components/Test/Test1";
 import Test2 from "src/app/components/Test/Test2";
@@ -28,6 +27,3 @@ const TestPage = () => {
 };
 
 export default TestPage;
-TestPage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
-};
