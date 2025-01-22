@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171717;
+    --foreground: #ffffff;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+text {
+  color: var(--foreground);
+}
+.nav-item {
+  padding: 8px;
+  border-radius: 15%;
+}
+.nav-item:hover {
+  text-decoration: none;
+  background-color: white;
+}
