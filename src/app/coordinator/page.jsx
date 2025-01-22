@@ -17,7 +17,7 @@ const Coordinator = () => {
         className="shadow-lg rounded-lg overflow-hidden mb-8"
         cover={
           <Image
-            src="/images/instructor.jpg"
+            src="/images/Instructor.jpg"
             alt="Coordinator"
             width={500}
             height={500}
