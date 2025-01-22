@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Coordinator = () => {
     return (<>
-    <h2 className="text-4xl font-bold pb-4 xl:pb-6 text-center"> Instructor</h2>
+    <h2 className="text-4xl p-4 font-bold pb-4 xl:pb-6 text-center"> Instructor</h2>
     <Image
             src="/images/Coordinator.jpg"
             alt="teacher"
