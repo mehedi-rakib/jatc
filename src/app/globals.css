@@ -30,3 +30,13 @@ text {
   text-decoration: none;
   background-color: white;
 }
+ @keyframes marquee {
+     0% { transform: translateX(100vw); }
+     100% { transform: translateX(-100%); }
+   }
+   .animate-marquee {
+     display: inline-block;
+     white-space: nowrap;
+     animation: marquee 40s linear infinite;
+     will-change: transform;
+   }
