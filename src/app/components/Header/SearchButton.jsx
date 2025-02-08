@@ -18,6 +18,7 @@ const SearchButton = () => (
     allowClear
     enterButton="Search"
     size="large"
+    className="red-500"
     onSearch={onSearch}
   />
 );

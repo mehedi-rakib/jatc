@@ -106,7 +106,7 @@ export default function ContactForm() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="rounded-lg"></iframe> */}
-          <iframe
+          {/* <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d327.1807634163489!2d90.44129654826517!3d23.834712632969513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77d72c1d459%3A0xbbaa446958c9a1f!2sAli%20Market!5e0!3m2!1sen!2sbd!4v1736834657508!5m2!1sen!2sbd"
             width="600"
             height="450"
@@ -114,7 +114,16 @@ export default function ContactForm() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          />
+          /> */}
+          <div className="w-full h-[450px] md:h-[600px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!4v1736834657508!6m8!1m7!1s1z_EiWiSg2Iu0Gn4WWp1Dg!2m2!1d90.4240461!2d23.8307125!3f143.29!4f-7.96!5f0.7820865974627469"
+              className="w-full h-full"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </div>
     </section>

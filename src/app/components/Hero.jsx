@@ -42,7 +42,7 @@ export default function Hero() {
           <div
             className="h-full w-full bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 " />
             <div className="container mx-auto px-4 h-full flex items-center justify-center">
               <div className="text-center text-white relative z-10 max-w-3xl">
                 <motion.h1
@@ -52,7 +52,7 @@ export default function Hero() {
                   className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                   {slides[currentSlide].title}
                 </motion.h1>
-                <motion.p
+                {/* <motion.p
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4 }}
@@ -98,7 +98,7 @@ export default function Hero() {
                     </svg>
                     SCHEDULE A TOUR
                   </Link>
-                </motion.div>
+                </motion.div> */}
               </div>
             </div>
           </div>
