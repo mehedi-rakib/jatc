@@ -6,6 +6,7 @@ import Image from "next/image";
 import { AiOutlineLogin } from "react-icons/ai";
 import { Select } from "antd";
 import CustomMenu from "./Header/CustomMenu";
+import SearchButton from "./Header/SearchButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,8 +29,8 @@ const Navbar = () => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+          {/* Logo  flex-shrink-0*/}
+          <div className="">
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo.png"
@@ -42,22 +43,29 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center flex-1">
-            <CustomMenu isMobile={false} onItemClick={() => {}} />
+          <nav className="hidden lg:flex items-center  justify-center flex-1">
+            {/* <CustomMenu isMobile={false} onItemClick={() => {}} /> */}
           </nav>
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
+            <div className="mx-auto">
+              <p className="text-red-500 font-semibold text-sm">
+                Hot line: 01715-458036
+              </p>
+            </div>
+            {/* <SearchButton /> */}
             <Select
               defaultValue="en"
-              style={{ width: 120 }}
+              style={{ width: 90 }}
               variant="unstyled"
               className="text-sm">
               <Select.Option value="en">English</Select.Option>
               <Select.Option value="jp">Japanese</Select.Option>
+              <Select.Option value="bn">Bangla</Select.Option>
             </Select>
             <button
-              className="p-2 text-white bg-yellow-300 hover:bg-blue-600 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="p-2 border-gradient-to-r border-2  text-white bg-green-400 hover:bg-red-500 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               aria-label="Search">
               <svg
                 className="w-5 h-5"
@@ -75,9 +83,11 @@ const Navbar = () => {
 
             <Link
               href="/"
-              className="bg-[#FFC107] flex items-center justify-center gap-2 font-semibold hover:bg-white hover:text-blue-600 text-black px-4 py-2 rounded-md text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
-              <AiOutlineLogin className="text-lg" />
-              <span>Login</span>
+              className="bg-red-500 hover:bg-green-400 border-gradient-to-r border-2  rounded-2xl items-center justify-center gap-2 font-semibold  text-black px-2 py-2  text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+              <div className="flex space-x-2 ">
+                <AiOutlineLogin className="text-lg text-white w-5 h-5" />
+                <span className="text-white text-md  ">Login</span>
+              </div>
             </Link>
           </div>
 
@@ -154,6 +164,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <nav className="hidden lg:flex items-center  bg-slate-100 justify-start pl-6 py-2 flex-1">
+        <CustomMenu isMobile={false} onItemClick={() => {}} />
+      </nav>
     </header>
   );
 };

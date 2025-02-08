@@ -105,7 +105,7 @@ export default function Features() {
             </svg>
           </div>
           <div className="bg-[#41C5E5] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">Result</h3>
+            <h3 className="text-white text-xl font-bold mb-3">Achieve</h3>
             <p className="text-white/90 text-sm">
               The results of finished courses have been published. You can check
               it now.

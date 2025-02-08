@@ -22,7 +22,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Layout>{children}</Layout>
+        <Layout>
+          <div className="relative w-full min-h-screen bg-[url('/bg.jpg')] bg-cover bg-center">
+            {children}
+          </div>
+        </Layout>
       </body>
     </html>
   );
