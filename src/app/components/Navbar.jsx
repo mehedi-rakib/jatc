@@ -55,6 +55,7 @@ const Navbar = () => {
               className="text-sm">
               <Select.Option value="en">English</Select.Option>
               <Select.Option value="jp">Japanese</Select.Option>
+              <Select.Option value="bn">Bangla</Select.Option>
             </Select>
             <button
               className="p-2 text-white bg-yellow-300 hover:bg-blue-600 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
