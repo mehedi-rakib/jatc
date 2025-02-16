@@ -36,7 +36,11 @@ const menuItems = [
     ],
   },
   { label: "LINKS", key: "11", href: "#" },
-  { label: "CONTACT", key: "12", href: "/contact-us" },
+  { label: "News", key: "31", href: "#" },
+  { label: "Blog", key: "32", href: "#" },
+  { label: "Addmission", key: "33", href: "/student-apply" },
+  { label: "Gallery", key: "gallery", href: "#" },
+  { label: "Contact", key: "45", href: "/contact-us" },
 ];
 
 const CustomMenu = ({ isMobile, onItemClick }) => {
@@ -60,7 +64,7 @@ const CustomMenu = ({ isMobile, onItemClick }) => {
   };
 
   return (
-    <div className="text-sm font-semibold">
+    <div className="text-sm font-semibold mx-auto">
       <ul className={`${isMobile ? "space-y-2" : "flex space-x-2"}`}>
         {menuItems.map((item) => (
           <li
@@ -71,7 +75,7 @@ const CustomMenu = ({ isMobile, onItemClick }) => {
             {item.href ? (
               <Link
                 href={item.href}
-                className={`block px-3 py-2 text-gray-800 hover:text-red-600 transition-colors duration-200 ${
+                className={`block px-3 uppercase py-2 text-gray-800 hover:text-red-600 transition-colors duration-200 ${
                   isMobile ? "w-full text-left" : ""
                 }`}
                 onClick={() => handleItemClick(item.key, item.href)}>

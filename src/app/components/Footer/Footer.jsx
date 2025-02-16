@@ -14,16 +14,21 @@ export default function Footer() {
   ];
 
   const openingHours = [
-    { day: "Monday", time: "08:00 - 02:00" },
-    { day: "Tuesday", time: "08:00 - 02:00" },
-    { day: "Wednesday", time: "08:00 - 02:00" },
-    { day: "Thursday", time: "08:00 - 02:00" },
-    { day: "Friday", time: "08:00 - 03:00" },
-    { day: "Saturday", time: "08:00 - 02:00" },
+    { day: "Monday", time: "10:00 - 20:00" },
+    { day: "Tuesday", time: "10:00 - 20:00" },
+    { day: "Wednesday", time: "10:00 - 20:00" },
+    { day: "Thursday", time: "10:00 - 20:00" },
+    { day: "Friday", time: "Closed" },
+    { day: "Saturday", time: "10:00 - 20:00" },
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: "/#", color: "bg-[#3b5998]" },
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/japan.ambition",
+      target: "_blank",
+      color: "bg-[#3b5998]",
+    },
     { icon: FaTwitter, href: "/#", color: "bg-[#1da1f2]" },
     { icon: FaInstagram, href: "/#", color: "bg-[#e1306c]" },
     { icon: FaYoutube, href: "/#", color: "bg-[#ff0000]" },
@@ -160,12 +165,13 @@ export default function Footer() {
                 </p>
                 <div className="flex gap-3 pt-2">
                   {socialLinks.map((social, index) => (
-                    <Link
+                    <a
                       key={index}
                       href={social.href}
+                      target="_blank"
                       className={`${social.color} p-2 rounded-full hover:opacity-80 transition-opacity`}>
                       <social.icon className="w-4 h-4" />
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>

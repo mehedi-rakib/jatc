@@ -10,13 +10,13 @@ export default function Hero() {
   const slides = [
     {
       image: "/images/slider-1.jpg",
-      title: "Education Bright Future",
+      title: "Study and Work in Japan",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh dolor, gravida faucibus dolor consectetur.",
     },
     {
       image: "/images/slider-2.jpg",
-      title: "Shaping Tomorrow's Leaders",
+      title: "Wellcome to Japan Ambition Training Center",
       description:
         "Providing quality education and nurturing young minds for a brighter tomorrow.",
     },
@@ -30,7 +30,7 @@ export default function Hero() {
   }, [slides.length]);
 
   return (
-    <div className="relative h-[650px] w-full overflow-hidden">
+    <div className="relative h-[480px] w-full overflow-hidden">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentSlide}
@@ -43,8 +43,8 @@ export default function Hero() {
             className="h-full w-full bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
             <div className="absolute inset-0 " />
-            <div className="container mx-auto px-4 h-full flex items-center justify-center">
-              <div className="text-center text-white relative z-10 max-w-3xl">
+            <div className="container  px-4 h-full w-3/4 flex items-center justify-start ml-4">
+              <div className="text-left text-red-500 relative z-10 max-w-3xl">
                 <motion.h1
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
