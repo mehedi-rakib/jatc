@@ -52,11 +52,11 @@ export default function Footer() {
                 </div>
               </Link>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, adipiscing elit. Sed tempor, urna eu
-                scelerisque maximus, urna nibh semper lectus, ut interdum nunc
-                ligula et magna. In ac mauris vehicula, vulputate sem at,
-                placerat risL Etiam laoreet erat magna, at hendrerit lorem
-                vulputate non. Nam facilisis congue convallis.
+                Japan Ambition Training Center is a leading Japanese language
+                institute in Bangladesh, offering easy and effective learning
+                methods. Our courses are tailored for Bangladeshi students,
+                ensuring fluency and skill development. Join us for quality
+                education at an affordable cost.
               </p>
             </div>
 

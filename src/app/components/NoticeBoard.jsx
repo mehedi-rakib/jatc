@@ -2,40 +2,50 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Button } from "antd";
 
 const notices = [
   {
-    id: 1,
-    type: "Important",
-    title: "Campus Closure Due to Weather",
-    date: "2023-12-15",
-    content:
-      "Due to severe weather conditions, the campus will be closed on December 16th. All classes are cancelled. Stay safe!",
-  },
-  {
-    id: 2,
-    type: "Academic",
-    title: "Fall Semester Registration Open",
-    date: "2023-12-10",
-    content:
-      "Registration for the Fall 2024 semester is now open. Please log in to the student portal to select your courses.",
-  },
-  {
-    id: 3,
+    id: 5,
     type: "Event",
-    title: "Annual Science Fair",
-    date: "2023-12-05",
+    title: "Free Seminar",
+    date: "2025-02-18",
     content:
-      "Join us for the Annual Science Fair on January 15th, 2024. Showcase your projects and win exciting prizes!",
+      "A seminar will be held at Japan Ambition Training Center in the presence of the company owner from Japan and representatives from Kumiai Company. To participate in the seminar, please click on the registration link and register quickly or collect your ticket.",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSc73-p0aSxuZ0oJ5m6Daq5jIWRukwovpi4EpYAXzd839YsnKQ/viewform?usp=sf_link",
   },
-  {
-    id: 4,
-    type: "Deadline",
-    title: "Scholarship Application Due",
-    date: "2023-12-01",
-    content:
-      "Reminder: The deadline for submitting scholarship applications is December 31st. Dont miss this opportunity!",
-  },
+  // {
+  //   id: 5,
+  //   type: "Important",
+  //   title: "Campus Closure Due to Weather",
+  //   date: "2023-12-15",
+  //   content:
+  //     "Due to severe weather conditions, the campus will be closed on December 16th. All classes are cancelled. Stay safe!",
+  // },
+  // {
+  //   id: 2,
+  //   type: "Academic",
+  //   title: "Fall Semester Registration Open",
+  //   date: "2023-12-10",
+  //   content:
+  //     "Registration for the Fall 2024 semester is now open. Please log in to the student portal to select your courses.",
+  // },
+  // {
+  //   id: 3,
+  //   type: "Event",
+  //   title: "Annual Science Fair",
+  //   date: "2023-12-05",
+  //   content:
+  //     "Join us for the Annual Science Fair on January 15th, 2024. Showcase your projects and win exciting prizes!",
+  // },
+  // {
+  //   id: 4,
+  //   type: "Deadline",
+  //   title: "Scholarship Application Due",
+  //   date: "2023-12-01",
+  //   content:
+  //     "Reminder: The deadline for submitting scholarship applications is December 31st. Dont miss this opportunity!",
+  // },
 ];
 
 const typeColors = {
@@ -82,6 +92,11 @@ export default function NoticeBoard() {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden">
                 <p className="text-gray-600">{notice.content}</p>
+                <button className="text-sm font-semibold text-green-700 bg-green-100 mt-2 hover:text-white hover:bg-red-600 px-2 py-1 rounded">
+                  <a target="_blank" href={notice.link}>
+                    Read More
+                  </a>
+                </button>
               </motion.div>
             </div>
           </motion.div>

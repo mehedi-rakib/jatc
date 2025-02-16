@@ -18,9 +18,9 @@ export default function OnlineLearning() {
               Best Language Learning Platform
             </h2>
             <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              nibh dolor, gravida faucibus dolor consectetur, pulvinar moncus
-              risus. Fusce vel rutrum mi.
+              Japan Ambition Training Center offers an easy learning method for
+              Bangladeshi students. The courses are designed especially for the
+              Bangladeshi students.
             </p>
           </div>
 
@@ -46,8 +46,8 @@ export default function OnlineLearning() {
                   Special Education
                 </h3>
                 <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet, adipiscing elit. Vivamus nibh
-                  dolor gravida at eleifend
+                  Personalized Japanese courses with adaptive methods to support
+                  every learner’s pace and confidence.
                 </p>
               </div>
             </div>
@@ -71,8 +71,8 @@ export default function OnlineLearning() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Honors classes</h3>
                 <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet, adipiscing elit. Vivamus nibh
-                  dolor gravida at eleifend
+                  Advanced training for top students, focusing on complex
+                  grammar, fluency, and exam preparation.
                 </p>
               </div>
             </div>
@@ -98,8 +98,8 @@ export default function OnlineLearning() {
                   Traditional academies
                 </h3>
                 <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet, adipiscing elit. Vivamus nibh
-                  dolor gravida at eleifend
+                  A structured curriculum with balanced reading, writing,
+                  speaking, and listening for steady progress.
                 </p>
               </div>
             </div>

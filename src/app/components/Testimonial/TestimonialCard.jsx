@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Rate } from "antd";
 import { FaQuoteRight } from "react-icons/fa";
 
-export function TestimonialCard({ image, name, content, rating }) {
-  const images = "/images/student/std-1.jpg";
+export function TestimonialCard({ images, name, content, rating }) {
+  // const images = "/images/student/std-1.jpg";
   return (
     <>
       {/* Profile Image */}
@@ -15,12 +15,12 @@ export function TestimonialCard({ image, name, content, rating }) {
       {/* Card Content */}
 
       <div className="bg-[#464B5F] rounded-lg p-6 md:p-6 md:pt-14 text-center relative">
-        <div className="mb-4">
+        <div className="mb-4 ">
           <Image
             src={images}
             alt="Profile"
-            width={80}
-            height={80}
+            width={100}
+            height={100}
             className="xl:-mt-20 xl:ml-52 mx-auto rounded-full xl:absolute"
           />
           <Rate

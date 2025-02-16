@@ -2,17 +2,17 @@ import { TestimonialCard } from "./TestimonialCard.jsx";
 
 const testimonials = [
   {
-    // image: "/images//std-1.jpg",
-    name: "DAVID MALAN",
+    image: "/images/student/std-2.jpg",
+    name: "Mahabub Hossain",
     content:
-      "Lorem ipsum dolor sit amet, consectetur elit. Phasellus porttitor leo id tortor cursus, a gravida sem feugiat. Maecenas nisl libero, lobortis id hendrerit sed, fermentum ut nunc. Duis condimentum tincidunt posuere.",
+      "The teaching method is amazing! I learned Japanese quickly and confidently. The instructors are knowledgeable and engaging. I highly recommend this course to anyone looking to learn Japanese.",
     rating: 5,
   },
   {
-    // image: "/images/std-2.jpg",
-    name: "DAVID MALAN",
+    image: "/images/student/std-1.jpg",
+    name: "Abu Bakkar Siddique",
     content:
-      "Lorem ipsum dolor sit amet, consectetur elit. Phasellus porttitor leo id tortor cursus, a gravida sem feugiat. Maecenas nisl libero, lobortis id hendrerit sed, fermentum ut nunc. Duis condimentum tincidunt posuere.",
+      "Great courses at an affordable price. Highly recommended for Japanese learners! I feel more fluent every day.",
     rating: 5,
   },
 ];
@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
         {testimonials.map((testimonial, index) => (
           <TestimonialCard
             key={index}
-            // image={testimonial.image}
+            images={testimonial.image}
             name={testimonial.name}
             content={testimonial.content}
             rating={testimonial.rating}

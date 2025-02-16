@@ -3,7 +3,7 @@ import { FaAngleRight } from "react-icons/fa";
 
 const Long = () => {
   return (
-    <div className="bg-gray-50 py-12 px-6">
+    <div className=" py-12 px-6">
       <motion.div
         className="max-w-4xl mx-auto text-center"
         initial={{ opacity: 0 }}
@@ -13,11 +13,23 @@ const Long = () => {
           Long Intensive Course
         </h2>
         <p className="text-lg text-gray-700 mb-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-          distinctio neque veritatis saepe qui nesciunt modi. Dolorum, similique
-          odio quam illum delectus molestiae quos cum molestias ullam atque nisi
-          tenetur soluta omnis sapiente temporibus voluptates, esse dolorem
-          fugiat natus eveniet accusantium a commodi veritatis eligendi?
+          The Long Intensive Japanese Course can help you master the Japanese
+          language in a very fast manner. This course focuses on speaking,
+          pronunciation, listening, reading and writing. The focus is on
+          improving your ability to communicate clearly and effectively. The
+          syllabus for your lessons is based on your course book, but your
+          teacher will also use other materials, including suggestions from
+          students so the content of the class is interesting and suit the
+          student's needs. You will work individually, in pairs or as a class.
+          Your teacher will correct your spoken and written errors so that you
+          will become more accurate and you will progress quickly. Each week,
+          you will be given homework to make sure you have sufficient amount of
+          extra knowledge. All Valiant students will understand their mistakes
+          and will gain the confidence to speak Japanese freely and naturally.
+          We have a diverse spectrum of enrolled students. Our students include:
+          business people, university students, corporate trainees, diplomats,
+          family members, working expats, teachers, spouses, and other adult
+          students of Japanese with various cultural backgrounds.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

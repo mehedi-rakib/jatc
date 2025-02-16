@@ -3,7 +3,7 @@ import { FaAngleRight } from "react-icons/fa";
 
 const Short = () => {
   return (
-    <div className="bg-gray-50 py-12 px-6">
+    <div className=" py-12 px-6">
       <motion.div
         className="max-w-4xl mx-auto text-center"
         initial={{ opacity: 0 }}
