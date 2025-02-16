@@ -31,14 +31,14 @@ export default function FooterTop() {
         <div className="flex w-3/4 mx-auto flex-col md:flex-row items-center justify-between gap-6">
           {/* Left side content */}
           <div className="text-white text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">Newsletter</h2>
+            {/* <h2 className="text-3xl md:text-4xl font-bold mb-2">Contact us</h2> */}
             <p className="text-white/90">
-              Lorem ipsum dolor sit amet consectetur.
+              Subscribe to our newsletter to get the latest updates and news
             </p>
           </div>
 
           {/* Newsletter form */}
-          <div className="w-3/4  md:w-auto">
+          <div className="w-full  md:w-auto">
             <form
               onSubmit={handleSubmit}
               className="flex flex-col align-middle justify-center items-top sm:flex-row gap-3 max-w-md mx-auto md:mx-0">

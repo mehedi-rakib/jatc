@@ -2,7 +2,7 @@ import { Image } from "antd";
 
 export default function OnlineLearning() {
   return (
-    <div className="container mt-10 mx-auto px-4 py-16">
+    <div className="container  mx-auto px-4 py-4">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Image Collage */}
         <Image
@@ -13,8 +13,8 @@ export default function OnlineLearning() {
 
         {/* Content */}
         <div className="space-y-8">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold">
+          <div className="space-y-2 ">
+            <h2 className="text-4xl pt-0 font-bold">
               Best Language Learning Platform
             </h2>
             <p className="text-gray-600">

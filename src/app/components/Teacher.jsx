@@ -6,8 +6,8 @@ import TeacherCard from "./Teacher/TeacherCard";
 const Teacher = () => {
   return (
     <>
-      <section className="py-16 px-4 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold pb-6 xl:pb-8 text-center">
+      <section className="py-4 md:py-10 px-4 max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold md:pb-0  text-center">
           Our Management
         </h2>
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-24 items-center justify-center">
