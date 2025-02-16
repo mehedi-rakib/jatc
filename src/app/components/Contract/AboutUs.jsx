@@ -3,18 +3,20 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <div className="container mt-10 mx-auto px-4 pb-10">
-      <div className="grid lg:grid-cols-2 gap-6 items-start">
+    <div className="container mt-0 mx-auto px-0 md:px-4 pb-10">
+      <div className="grid lg:grid-cols-2 gap-6 items-center">
         {/* Image Collage */}
         <Image
           src="/images/aboutImg.png"
           alt="Online Learning"
+          height={1200}
+          width={1200}
           preview={false}
         />
 
         {/* Content */}
 
-        <div className="space-y-4">
+        <div className="space-y-4 px-4">
           <h2 className="text-4xl font-bold text-center">About Us</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sunt
