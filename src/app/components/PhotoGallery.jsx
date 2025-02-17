@@ -40,7 +40,7 @@ export default function PhotoGallery() {
             Photo Gallery
           </h2>
           <p className="text-gray-600 mb-8">
-          Explore a collection of stunning photos capturing unforgettable moments and breathtaking scenes.
+            Explore a collection of stunning photos capturing unforgettable moments and breathtaking scenes.
           </p>
           <Link
             href="/#"
