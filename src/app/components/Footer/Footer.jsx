@@ -14,6 +14,7 @@ export default function Footer() {
   ];
 
   const openingHours = [
+    { day: "Sunday", time: "10:00 - 20:00" },
     { day: "Monday", time: "10:00 - 20:00" },
     { day: "Tuesday", time: "10:00 - 20:00" },
     { day: "Wednesday", time: "10:00 - 20:00" },

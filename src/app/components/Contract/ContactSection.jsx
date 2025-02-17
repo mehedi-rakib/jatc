@@ -5,7 +5,8 @@ const contactInfo = [
   {
     type: "phone",
     title: "Call Us",
-    details: "+880 1372 7202",
+    details: "+880 1300-302099",
+    details2: "+880 1715-458036",
   },
   {
     type: "mail",
@@ -15,7 +16,7 @@ const contactInfo = [
   {
     type: "clock",
     title: "Opening Hours",
-    details: ["Mon - Fri : 10am to 2pm", "Sat - Sun : Closed"],
+    details: ["Saturday - Thursday : 10am to 8pm", "Friday : Closed"],
   },
   {
     type: "location",
@@ -34,6 +35,7 @@ export default function ContactSection() {
             type={info.type}
             title={info.title}
             details={info.details}
+            detailses={info.details2}
           />
         ))}
       </div>
