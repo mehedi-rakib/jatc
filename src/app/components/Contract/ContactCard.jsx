@@ -7,7 +7,7 @@ const iconMap = {
   location: FaMapMarkerAlt,
 };
 
-export function ContactCard({ type, title, details,detailses }) {
+export function ContactCard({ type, title, details }) {
   const Icon = iconMap[type];
 
   return (
@@ -19,12 +19,9 @@ export function ContactCard({ type, title, details,detailses }) {
       {Array.isArray(details) ? (
         details.map((detail, index) => (
           <div className="flex flex-col space-y-2">
-          <p key={index} className="text-gray-600 text-sm">
-            {detail}
-          </p>
-          <p key={index} className="text-gray-600 text-sm">
-            {detailses}
-          </p>
+            <p key={index} className="text-gray-600 text-sm">
+              {detail}
+            </p>
           </div>
         ))
       ) : (

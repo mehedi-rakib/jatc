@@ -5,8 +5,7 @@ const contactInfo = [
   {
     type: "phone",
     title: "Call Us",
-    details: "+880 1300-302099",
-    details2: "+880 1715-458036",
+    details: ["+880 1300-302099", "+880 1715-458036"],
   },
   {
     type: "mail",
@@ -21,7 +20,9 @@ const contactInfo = [
   {
     type: "location",
     title: "Address",
-    details: ["A-61/4 (1st Floor), Ali Market, Khilkhet Bazar Road, Bottola, Khilkhet, Dhaka-1229"],
+    details: [
+      "A-61/4 (1st Floor), Ali Market, Khilkhet Bazar Road, Bottola, Khilkhet, Dhaka-1229",
+    ],
   },
 ];
 
@@ -35,7 +36,6 @@ export default function ContactSection() {
             type={info.type}
             title={info.title}
             details={info.details}
-            detailses={info.details2}
           />
         ))}
       </div>
