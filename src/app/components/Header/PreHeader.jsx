@@ -1,4 +1,6 @@
-import Link from "next/link";
+// import Link from "next/link";
+
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Preheader = () => {
   return (
@@ -9,7 +11,8 @@ const Preheader = () => {
     //   </div>
     // </div>
     <div className="w-full bg-gray-200 overflow-hidden">
-      <div className="flex flex-col space-y-2">
+      {/* <LanguageSwitcher /> */}
+      {/* <div className="flex flex-col space-y-2">
         <Link
           href="/"
           className="text-red-500 text-sm md:text-lg font-bold animate-marquee">
@@ -19,7 +22,7 @@ const Preheader = () => {
             )
             .join(" • ")}
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

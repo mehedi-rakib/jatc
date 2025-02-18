@@ -7,6 +7,7 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { Select } from "antd";
 import CustomMenu from "./Header/CustomMenu";
 import SearchButton from "./Header/SearchButton";
+import LanguageSwitcher from "./Header/LanguageSwitcher";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,6 +42,7 @@ const Navbar = () => {
               />
             </Link>
           </div>
+          <LanguageSwitcher />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center  justify-center flex-1">
