@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "antd";
 import Navbar from "./Header/Navbar";
 import CustomDropdown from "./Controler/CustomDropdown.js";
@@ -52,7 +51,7 @@ export default function Header() {
             href="/"
             className="flex items-center justify-between md:justify-around space-x-2 md:mr-28">
             <div className="absolute h-20 w-52 md:ml-52">
-              <Image
+              <img
                 src="/logo.png"
                 alt="Logo"
                 className="pt-4"
@@ -84,8 +83,11 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            
-          <CustomDropdown className="nav-item" label="Language" items={Language} />
+            <CustomDropdown
+              className="nav-item"
+              label="Language"
+              items={Language}
+            />
             <Button
               className="p-2 text-white bg-yellow-300 hover:bg-blue-600 rounded-full"
               aria-label="Search">
@@ -103,7 +105,7 @@ export default function Header() {
               </svg>
             </Button>
             <Link
-              href="/login"
+              href="https://app.japanambition.com/login"
               className="bg-[#FFC107] hover:bg-[#FFA000] text-black px-4 py-2 rounded-md text-sm font-medium transition-colors">
               Login/Register
             </Link>
@@ -147,10 +149,17 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <CustomDropdown className="nav-item" label="COURSE" items={Course} />
+              <CustomDropdown
+                className="nav-item"
+                label="COURSE"
+                items={Course}
+              />
               <div className="px-4 pt-2 space-y-2">
-                
-          <CustomDropdown className="nav-item bg-yellow-300" label="Language" items={Language} />
+                <CustomDropdown
+                  className="nav-item bg-yellow-300"
+                  label="Language"
+                  items={Language}
+                />
                 <button
                   className="w-full text-left text-black px-2 py-2 text-sm font-medium hover:bg-gray-100 rounded-md flex items-center"
                   aria-label="Search">
@@ -169,7 +178,7 @@ export default function Header() {
                   Search
                 </button>
                 <Link
-                  href="/login"
+                  href="https://app.japanambition.com/login"
                   className="block w-full bg-[#FFC107] hover:bg-[#FFA000] text-black px-4 py-2 rounded-md text-sm font-medium text-center transition-colors"
                   onClick={() => setIsMenuOpen(false)}>
                   Login/Register

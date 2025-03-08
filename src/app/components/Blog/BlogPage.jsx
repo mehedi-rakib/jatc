@@ -8,7 +8,6 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
-import Image from "next/image";
 
 const { Search } = Input;
 const { Option } = Select;
@@ -105,7 +104,7 @@ export default function BlogPage() {
             key={post.id}
             className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="relative h-48">
-              <Image src={post.image} alt={post.title} layout="fill" />
+              <img src={post.image} alt={post.title} layout="fill" />
             </div>
             <div className="p-6">
               <span className="text-sm font-semibold text-blue-600 mb-2 block">

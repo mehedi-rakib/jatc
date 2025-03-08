@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Rate } from "antd";
 import { FaQuoteRight } from "react-icons/fa";
 
@@ -16,7 +15,7 @@ export function TestimonialCard({ images, name, content, rating }) {
 
       <div className="bg-[#464B5F] rounded-lg p-6 md:p-6 md:pt-14 text-center relative">
         <div className="mb-4 ">
-          <Image
+          <img
             src={images}
             alt="Profile"
             width={100}

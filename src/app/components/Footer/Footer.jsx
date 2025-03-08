@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
@@ -44,7 +43,7 @@ export default function Footer() {
             <div className="space-y-4">
               <Link href="/#" className="inline-block">
                 <div className="relative w-48 h-16">
-                  <Image
+                  <img
                     src="/logo.png"
                     alt="International School System"
                     fill

@@ -1,8 +1,7 @@
 "use client";
-
 import React from "react";
 import { Typography, Tag, Divider, Avatar, Space } from "antd";
-import Image from "next/image";
+
 import {
   CalendarOutlined,
   UserOutlined,
@@ -40,7 +39,7 @@ const BlogPost = () => {
           </Space>
         </Space>
 
-        <Image
+        <img
           src="/images/gallery-6.jpg"
           height={400}
           width={800}

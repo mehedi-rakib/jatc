@@ -1,12 +1,9 @@
-// import { Image } from "antd";
-import Image from "next/image";
-
 const AboutUs = () => {
   return (
     <div className="container mt-0 mx-auto px-0 md:px-4 pb-10">
       <div className="grid lg:grid-cols-2 gap-6 items-center">
         {/* Image Collage */}
-        <Image
+        <img
           src="/images/aboutImg.png"
           alt="Online Learning"
           height={1200}
