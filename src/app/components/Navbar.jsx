@@ -82,7 +82,7 @@ const Navbar = () => {
             </button>
 
             <Link
-              href="/"
+              href="https://japanambition.com/admin/login"
               className="bg-red-500 hover:bg-green-400 border-gradient-to-r border-2  rounded-2xl items-center justify-center gap-2 font-semibold  text-black px-2 py-2  text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
               <div className="flex space-x-2 ">
                 <AiOutlineLogin className="text-lg text-white w-5 h-5" />
