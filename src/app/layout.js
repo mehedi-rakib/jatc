@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "./components/Layout/Layout";
+import WhatsAppButton from "./components/WhatsappButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
           <div className="relative w-full min-h-screen bg-[url('/bg.jpg')] bg-cover bg-center">
             {children}
           </div>
+          <WhatsAppButton />
         </Layout>
       </body>
     </html>

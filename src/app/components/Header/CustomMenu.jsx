@@ -39,7 +39,7 @@ const menuItems = [
   { label: "News", key: "31", href: "#" },
   { label: "Blog", key: "32", href: "#" },
   { label: "Addmission", key: "33", href: "/student-apply" },
-  { label: "Gallery", key: "gallery", href: "#" },
+  { label: "Gallery", key: "gallery", href: "gallery" },
   { label: "Contact", key: "45", href: "/contact-us" },
 ];
 
