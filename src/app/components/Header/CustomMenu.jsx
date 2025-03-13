@@ -35,11 +35,10 @@ const menuItems = [
       { label: "JLPT Test 4", key: "20", href: "/test/4" },
     ],
   },
-  { label: "LINKS", key: "11", href: "#" },
   { label: "News", key: "31", href: "/news" },
   { label: "Blog", key: "32", href: "/blog" },
   { label: "Addmission", key: "33", href: "/student-apply" },
-  { label: "Gallery", key: "gallery", href: "#" },
+  { label: "Gallery", key: "gallery", href: "gallery" },
   { label: "Contact", key: "45", href: "/contact-us" },
 ];
 
