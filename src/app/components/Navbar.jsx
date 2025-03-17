@@ -6,10 +6,13 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { Select } from "antd";
 import CustomMenu from "./Header/CustomMenu";
 import SearchButton from "./Header/SearchButton";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -36,7 +39,6 @@ const Navbar = () => {
                 alt="Logo"
                 width={200}
                 height={70}
-                priority
               />
             </Link>
           </div>
@@ -50,22 +52,19 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="mx-auto">
               <p className="text-red-500 font-semibold text-sm">
-                Hot line: 01715-458036
+                {t('common.hotline')}
               </p>
             </div>
             {/* <SearchButton /> */}
-            <Select
-              defaultValue="en"
-              style={{ width: 90 }}
-              variant="unstyled"
-              className="text-sm">
-              <Select.Option value="en">English</Select.Option>
-              <Select.Option value="jp">Japanese</Select.Option>
-              <Select.Option value="bn">Bangla</Select.Option>
-            </Select>
+            
+            {/* Language Switcher */}
+            <div className="bg-red-500 hover:bg-red-600 rounded-md px-2 py-1">
+              <LanguageSwitcher />
+            </div>
+          
             <button
               className="p-2 border-gradient-to-r border-2  text-white bg-green-400 hover:bg-red-500 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              aria-label="Search">
+              aria-label={t('common.search')}>
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -85,7 +84,7 @@ const Navbar = () => {
               className="bg-red-500 hover:bg-green-400 border-gradient-to-r border-2  rounded-2xl items-center justify-center gap-2 font-semibold  text-black px-2 py-2  text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
               <div className="flex space-x-2 ">
                 <AiOutlineLogin className="text-lg text-white w-5 h-5" />
-                <span className="text-white text-md  ">Login</span>
+                <span className="text-white text-md">{t('common.login')}</span>
               </div>
             </Link>
           </div>
@@ -138,27 +137,22 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1">
           <CustomMenu isMobile={true} onItemClick={closeMenu} />
           <div className="mt-4 space-y-2">
-            <Select
-              defaultValue="en"
-              style={{ width: "100%" }}
-              variant={true}
-              className="text-sm"
-              onChange={closeMenu}>
-              <Select.Option value="en">English</Select.Option>
-              <Select.Option value="jp">Japanese</Select.Option>
-            </Select>
+            {/* Language Switcher for Mobile */}
+            <div className="bg-red-500 hover:bg-red-600 rounded-md px-2 py-1 flex justify-center">
+              <LanguageSwitcher />
+            </div>
             <button
               className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-              aria-label="Search"
+              aria-label={t('common.search')}
               onClick={closeMenu}>
-              Search
+              {t('common.search')}
             </button>
             <Link
               href="https://app.japanambition.com/login"
               className="bg-[#FFC107] flex items-center justify-center gap-2 font-semibold hover:bg-white hover:text-blue-600 text-black px-4 py-2 rounded-md text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
               onClick={closeMenu}>
               <AiOutlineLogin className="text-lg" />
-              <span>Login</span>
+              <span>{t('common.login')}</span>
             </Link>
           </div>
         </div>

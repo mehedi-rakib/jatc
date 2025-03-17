@@ -2,22 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
       image: "/images/slider-1.jpg",
-      title: "Study and Work in Japan",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh dolor, gravida faucibus dolor consectetur.",
+      title: t('hero.slide1.title', "Study and Work in Japan"),
+      description: t('hero.slide1.description', "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh dolor, gravida faucibus dolor consectetur."),
     },
     {
       image: "/images/slider-2.jpg",
-      title: "Wellcome to Japan Ambition Training Center",
-      description:
-        "Providing quality education and nurturing young minds for a brighter tomorrow.",
+      title: t('hero.slide2.title', "Welcome to Japan Ambition Training Center"),
+      description: t('hero.slide2.description', "Providing quality education and nurturing young minds for a brighter tomorrow."),
     },
   ];
 

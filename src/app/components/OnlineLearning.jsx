@@ -1,13 +1,17 @@
+"use client";
 import { Image } from "antd";
+import { useTranslation } from "react-i18next";
 
 export default function OnlineLearning() {
+  const { t } = useTranslation();
+  
   return (
-    <div className="container  mx-auto px-4 py-4">
+    <div className="container mx-auto px-4 py-4">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Image Collage */}
         <Image
           src="/images/aboutImg.png"
-          alt="Online Learning"
+          alt={t('onlineLearning.title')}
           preview={false}
         />
 
@@ -15,17 +19,15 @@ export default function OnlineLearning() {
         <div className="space-y-8">
           <div className="space-y-2 ">
             <h2 className="text-4xl pt-0 font-bold">
-              Best Language Learning Platform
+              {t('onlineLearning.title')}
             </h2>
             <p className="text-gray-600">
-              Japan Ambition Training Center offers an easy learning method for
-              Bangladeshi students. The courses are designed especially for the
-              Bangladeshi students.
+              {t('onlineLearning.description')}
             </p>
           </div>
 
           <div className="space-y-6">
-            {/* Special Education */}
+            {/* Video Lessons */}
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#41C5E5] flex items-center justify-center">
                 <svg
@@ -43,16 +45,15 @@ export default function OnlineLearning() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  Special Education
+                  {t('onlineLearning.features.videoLessons')}
                 </h3>
                 <p className="text-gray-600">
-                  Personalized Japanese courses with adaptive methods to support
-                  every learner’s pace and confidence.
+                  {t('onlineLearning.features.videoLessonsDesc', 'Personalized Japanese courses with adaptive methods to support every learner\'s pace and confidence.')}
                 </p>
               </div>
             </div>
 
-            {/* Honors classes */}
+            {/* Interactive Materials */}
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#4CAF50] flex items-center justify-center">
                 <svg
@@ -69,15 +70,14 @@ export default function OnlineLearning() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Honors classes</h3>
+                <h3 className="text-xl font-semibold mb-2">{t('onlineLearning.features.interactiveMaterials')}</h3>
                 <p className="text-gray-600">
-                  Advanced training for top students, focusing on complex
-                  grammar, fluency, and exam preparation.
+                  {t('onlineLearning.features.interactiveMaterialsDesc', 'Advanced training for top students, focusing on complex grammar, fluency, and exam preparation.')}
                 </p>
               </div>
             </div>
 
-            {/* Traditional academies */}
+            {/* Live Classes */}
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#FF1943] flex items-center justify-center">
                 <svg
@@ -95,14 +95,19 @@ export default function OnlineLearning() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  Traditional academies
+                  {t('onlineLearning.features.liveClasses')}
                 </h3>
                 <p className="text-gray-600">
-                  A structured curriculum with balanced reading, writing,
-                  speaking, and listening for steady progress.
+                  {t('onlineLearning.features.liveClassesDesc', 'A structured curriculum with balanced reading, writing, speaking, and listening for steady progress.')}
                 </p>
               </div>
             </div>
+          </div>
+          
+          <div className="mt-6">
+            <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition-colors">
+              {t('onlineLearning.startLearning')}
+            </button>
           </div>
         </div>
       </div>

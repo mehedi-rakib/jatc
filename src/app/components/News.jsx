@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const notices = [
   {
@@ -47,45 +48,52 @@ const typeColors = {
 
 export default function News() {
   const [expandedNotice, setExpandedNotice] = useState(null);
+  const { t } = useTranslation();
 
   return (
     <section className="py-16 px-4 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8 text-center">Importent News</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">{t('news.title')}</h1>
       <div className="space-y-4">
-        {notices.map((notice) => (
-          <motion.div
-            key={notice.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}>
-            <div
-              className="p-4 cursor-pointer"
-              onClick={() =>
-                setExpandedNotice(
-                  expandedNotice === notice.id ? null : notice.id
-                )
-              }>
-              <div className="flex justify-between items-center mb-2">
-                <span
-                  className={`text-sm font-semibold px-2 py-1 rounded ${
-                    typeColors[notice.type]
-                  }`}>
-                  {notice.type}
-                </span>
-                <span className="text-sm text-gray-500">{notice.date}</span>
+        {notices.length > 0 ? (
+          notices.map((notice) => (
+            <motion.div
+              key={notice.id}
+              className="bg-white shadow-md rounded-lg overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}>
+              <div
+                className="p-4 cursor-pointer"
+                onClick={() =>
+                  setExpandedNotice(
+                    expandedNotice === notice.id ? null : notice.id
+                  )
+                }>
+                <div className="flex justify-between items-center mb-2">
+                  <span
+                    className={`text-sm font-semibold px-2 py-1 rounded ${
+                      typeColors[notice.type]
+                    }`}>
+                    {notice.type}
+                  </span>
+                  <span className="text-sm text-gray-500">{notice.date}</span>
+                </div>
+                <h2 className="text-xl font-semibold mb-2">{notice.title}</h2>
+                <motion.div
+                  initial={false}
+                  animate={{ height: expandedNotice === notice.id ? "auto" : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden">
+                  <p className="text-gray-600">{notice.content}</p>
+                </motion.div>
               </div>
-              <h2 className="text-xl font-semibold mb-2">{notice.title}</h2>
-              <motion.div
-                initial={false}
-                animate={{ height: expandedNotice === notice.id ? "auto" : 0 }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden">
-                <p className="text-gray-600">{notice.content}</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))
+        ) : (
+          <div className="text-center py-8">
+            <p className="text-gray-500">{t('news.noNews')}</p>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -14,12 +14,19 @@
   }
 } */
 
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* For iOS devices */
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   background-image: image("bg.jpg");
   /* font-family: Lato, Helvetica, sans-serif; */
   font-family: ui-sans-serif, system-ui, sans-serif;
+  overscroll-behavior-y: contain; /* Prevents bounce effect on some mobile browsers */
+  touch-action: manipulation; /* Improves touch responsiveness */
 }
 text {
   color: var(--foreground);
@@ -42,3 +49,37 @@ text {
      animation: marquee 40s linear infinite;
      will-change: transform;
    }
+
+/* Smooth scrolling container */
+.smooth-scroll-container {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  html, body {
+    scroll-snap-type: y proximity; /* Helps with smooth scrolling between sections */
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+    will-change: transform; /* Hint to browser for optimization */
+  }
+  
+  /* Optimize animations for mobile */
+  * {
+    transition-duration: 0.2s; /* Shorter transitions on mobile */
+  }
+  
+  /* Scrollable elements within the page */
+  .scrollable-element {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+}

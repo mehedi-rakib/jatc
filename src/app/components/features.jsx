@@ -1,4 +1,10 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
+
 export default function Features() {
+  const { t } = useTranslation();
+  
   return (
     <div className="container mx-auto px-4 -mt-24 relative z-10">
       <div className="grid mx-auto lg:px-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
@@ -20,10 +26,9 @@ export default function Features() {
             </svg>
           </div>
           <div className="bg-[#FFC107] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">News</h3>
+            <h3 className="text-white text-xl font-bold mb-3">{t('news.title')}</h3>
             <p className="text-white/90 text-sm">
-              Learn the easiest method of learning Japanese language
-              successfully.
+              {t('features.news.description', 'Learn the easiest method of learning Japanese language successfully.')}
             </p>
           </div>
         </div>
@@ -46,10 +51,9 @@ export default function Features() {
             </svg>
           </div>
           <div className="bg-[#FF1943] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">Schedule</h3>
+            <h3 className="text-white text-xl font-bold mb-3">{t('features.schedule.title', 'Schedule')}</h3>
             <p className="text-white/90 text-sm">
-              We have morning-day-evening shift for the convenient of our
-              students.
+              {t('features.schedule.description', 'We have morning-day-evening shift for the convenient of our students.')}
             </p>
           </div>
         </div>
@@ -72,10 +76,9 @@ export default function Features() {
             </svg>
           </div>
           <div className="bg-[#003B6D] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">Notice Board</h3>
+            <h3 className="text-white text-xl font-bold mb-3">{t('noticeBoard.title')}</h3>
             <p className="text-white/90 text-sm">
-              Admission going on. Please contact with our program coordinator to
-              apply.
+              {t('features.notice.description', 'Admission going on. Please contact with our program coordinator to apply.')}
             </p>
           </div>
         </div>
@@ -105,10 +108,9 @@ export default function Features() {
             </svg>
           </div>
           <div className="bg-[#41C5E5] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">Achieve</h3>
+            <h3 className="text-white text-xl font-bold mb-3">{t('features.achieve.title', 'Achieve')}</h3>
             <p className="text-white/90 text-sm">
-              The results of finished courses have been published. You can check
-              it now.
+              {t('features.achieve.description', 'The results of finished courses have been published. You can check it now.')}
             </p>
           </div>
         </div>

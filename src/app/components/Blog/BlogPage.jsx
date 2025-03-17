@@ -8,6 +8,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const { Search } = Input;
 const { Option } = Select;
@@ -63,89 +64,111 @@ const blogPosts = [
   // Add more blog posts as needed
 ];
 
+// Extract unique categories for the filter dropdown
+const categories = ["All Categories", ...new Set(blogPosts.map((post) => post.category))];
+
 export default function BlogPage() {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Calculate current posts based on pagination
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-center">Our Blog</h1>
+    <div className="bg-gray-50 py-12">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold text-center mb-12">{t('blog.title')}</h1>
 
-      {/* Search and Filter */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
-        <Search
-          placeholder="Search blog posts"
-          allowClear
-          enterButton={<SearchOutlined />}
-          size="large"
-          className="w-full md:w-96"
-        />
-        <Select defaultValue="all" style={{ width: 200 }}>
-          <Option value="all">All Categories</Option>
-          <Option value="education-technology">Education Technology</Option>
-          <Option value="student-wellness">Student Wellness</Option>
-          <Option value="stem">STEM</Option>
-          <Option value="sustainability">Sustainability</Option>
-        </Select>
-      </div>
+        {/* Search and Filter */}
+        <div className="flex flex-col md:flex-row gap-4 mb-8 justify-center">
+          <Search
+            placeholder={t('blog.search')}
+            allowClear
+            enterButton={<SearchOutlined />}
+            size="large"
+            className="max-w-md"
+          />
+          <Select
+            defaultValue="All Categories"
+            size="large"
+            style={{ minWidth: 180 }}
+            className="w-full md:w-auto"
+          >
+            {categories.map((category, index) => (
+              <Option key={index} value={category}>
+                {category === "All Categories" ? t('blog.allCategories') : category}
+              </Option>
+            ))}
+          </Select>
+        </div>
 
-      {/* Blog Posts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {currentPosts.map((post) => (
-          <div
-            key={post.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="relative h-48">
-              <img src={post.image} alt={post.title} layout="fill" />
-            </div>
-            <div className="p-6">
-              <span className="text-sm font-semibold text-blue-600 mb-2 block">
-                {post.category}
-              </span>
-              <h2 className="text-xl font-bold mb-2 line-clamp-2">
-                <Link
-                  //   href={`/blog/${post.id}`}
-                  href={link}
-                  className="text-gray-800 hover:text-blue-600">
-                  {post.title}
+        {/* Blog Posts Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {currentPosts.map((post) => (
+            <div
+              key={post.id}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <Link href={`${link}`}>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-48 object-cover"
+                />
+              </Link>
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-2 text-sm text-gray-500">
+                  <span>{post.category}</span>
+                  <span className="flex items-center">
+                    <ClockCircleOutlined className="mr-1" />
+                    {post.readTime} {t('blog.readTime')}
+                  </span>
+                </div>
+                <Link href={`${link}`}>
+                  <h2 className="text-xl font-semibold mb-2 hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h2>
                 </Link>
-              </h2>
-              <p className="text-gray-600 mb-4 line-clamp-3">
-                {post.description}
-              </p>
-              <div className="flex justify-between items-center text-sm text-gray-500">
-                <span className="flex items-center">
-                  <UserOutlined className="mr-1" /> {post.author}
-                </span>
-                <span className="flex items-center">
-                  <ClockCircleOutlined className="mr-1" /> {post.readTime} min
-                  read
-                </span>
+                <p className="text-gray-600 mb-4 line-clamp-3">
+                  {post.description}
+                </p>
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center">
+                    <UserOutlined className="mr-2" />
+                    <span className="text-sm text-gray-500">{post.author}</span>
+                  </div>
+                  <Link
+                    href={`${link}`}
+                    className="text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    {t('blog.readMore')}
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Pagination */}
-      <div className="mt-12 flex justify-center">
-        <Pagination
-          current={currentPage}
-          total={blogPosts.length}
-          pageSize={postsPerPage}
-          onChange={handlePageChange}
-          showSizeChanger={false}
-        />
+        {/* Pagination */}
+        <div className="flex justify-center">
+          <Pagination
+            current={currentPage}
+            onChange={handlePageChange}
+            total={blogPosts.length}
+            pageSize={postsPerPage}
+            showSizeChanger={false}
+          />
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
 //BlogPage

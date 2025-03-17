@@ -1,0 +1,296 @@
+{
+  "common": {
+    "languageSwitch": "Language",
+    "english": "English",
+    "japanese": "日本語",
+    "bangla": "বাংলা",
+    "login": "Login",
+    "search": "Search",
+    "hotline": "Hot line: 01715-458036"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Study and Work in Japan",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh dolor, gravida faucibus dolor consectetur."
+    },
+    "slide2": {
+      "title": "Welcome to Japan Ambition Training Center",
+      "description": "Providing quality education and nurturing young minds for a brighter tomorrow."
+    }
+  },
+  "features": {
+    "news": {
+      "description": "Learn the easiest method of learning Japanese language successfully."
+    },
+    "schedule": {
+      "title": "Schedule",
+      "description": "We have morning-day-evening shift for the convenient of our students."
+    },
+    "notice": {
+      "description": "Admission going on. Please contact with our program coordinator to apply."
+    },
+    "achieve": {
+      "title": "Achieve",
+      "description": "The results of finished courses have been published. You can check it now."
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "search": "Search blog posts",
+    "category": "Category",
+    "allCategories": "All Categories",
+    "readTime": "min read",
+    "readMore": "Read More",
+    "recentPosts": "Recent Posts",
+    "categories": "Categories",
+    "tags": "Tags",
+    "comments": "Comments",
+    "author": "Author",
+    "date": "Date",
+    "relatedPosts": "Related Posts",
+    "sharePost": "Share this post",
+    "leaveComment": "Leave a Comment",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "yourComment": "Your Comment",
+    "submit": "Submit",
+    "pagination": "Page"
+  },
+  "contact": {
+    "getInTouch": "Get In Touch",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Submit",
+    "pleaseInputFirstName": "Please input your first name!",
+    "pleaseInputLastName": "Please input your last name!",
+    "pleaseInputEmail": "Please input your email!",
+    "pleaseInputValidEmail": "Please enter a valid email!",
+    "pleaseInputPhone": "Please input your phone number!",
+    "pleaseInputSubject": "Please input the subject!",
+    "pleaseInputMessage": "Please input your message!",
+    "emailPlaceholder": "Email Address",
+    "phonePlaceholder": "Phone Number",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Write your message here...",
+    "mapTitle": "Japan Ambition Training Center Location"
+  },
+  "courses": {
+    "startCourse": "Start Course",
+    "startLesson": "Start Lesson",
+    "features": {
+      "title": "What You Will Learn",
+      "hiraganaKatakana": "Master Hiragana and Katakana",
+      "basicGrammar": "Understand basic grammar patterns",
+      "simpleConversations": "Engage in simple conversations in Japanese",
+      "culture": "Learn about Japanese culture and traditions"
+    },
+    "long": {
+      "description": "The Long Intensive Japanese Course can help you master the Japanese language in a very fast manner. This course focuses on speaking, pronunciation, listening, reading and writing. The focus is on improving your ability to communicate clearly and effectively.",
+      "module1": {
+        "title": "Introduction to Japanese",
+        "description": "A beginner-friendly introduction to the Japanese language, focusing on basic grammar and vocabulary. You will be introduced to essential phrases and essential Japanese customs."
+      },
+      "module2": {
+        "title": "Intermediate Japanese",
+        "description": "Aimed at intermediate learners, this module dives into more complex sentence structures, kanji, and conversation practice."
+      },
+      "module3": {
+        "title": "Advanced Japanese",
+        "description": "For advanced learners, this module focuses on fluent conversation, complex reading and writing, and cultural nuances."
+      },
+      "module4": {
+        "title": "Business Japanese",
+        "description": "Specialized course for those who need Japanese for business contexts, including formal language, business etiquette, and professional writing."
+      }
+    },
+    "short": {
+      "description": "This short intensive course is designed for those who want to quickly learn essential Japanese phrases and vocabulary for travel or short-term use. It covers speaking, reading, and basic cultural awareness in a fun, interactive format.",
+      "module1": {
+        "title": "Survival Japanese",
+        "description": "A crash course for travelers, teaching basic expressions and polite phrases for everyday situations like ordering food or asking for directions."
+      },
+      "module2": {
+        "title": "Japanese for Tourists",
+        "description": "Focuses on travel-specific vocabulary, common questions, and phrases to help you navigate Japan with ease."
+      }
+    },
+    "private": {
+      "description": "Take your Japanese learning experience to the next level with personalized lessons tailored to your individual needs and pace. Whether you are a beginner or looking to improve your conversation skills, private lessons will accelerate your learning.",
+      "module1": {
+        "title": "Beginners Japanese",
+        "description": "A one-on-one lesson designed for absolute beginners. Learn the basics, including pronunciation, simple sentences, and basic kanji."
+      },
+      "module2": {
+        "title": "Advanced Japanese Conversation",
+        "description": "Improve your speaking skills with private lessons focused on advanced topics like debates, current events, and business Japanese."
+      }
+    }
+  },
+  "onlineLearning": {
+    "title": "Online Learning",
+    "description": "Access our Japanese language courses from anywhere in the world. Learn at your own pace with our comprehensive online curriculum.",
+    "features": {
+      "videoLessons": "HD Video Lessons",
+      "videoLessonsDesc": "Personalized Japanese courses with adaptive methods to support every learner's pace and confidence.",
+      "interactiveMaterials": "Interactive Learning Materials",
+      "interactiveMaterialsDesc": "Advanced training for top students, focusing on complex grammar, fluency, and exam preparation.",
+      "liveClasses": "Live Virtual Classes",
+      "liveClassesDesc": "A structured curriculum with balanced reading, writing, speaking, and listening for steady progress.",
+      "practiceExercises": "Practice Exercises & Quizzes"
+    },
+    "startLearning": "Start Learning",
+    "learnMore": "Learn More"
+  },
+  "photoGallery": {
+    "title": "Photo Gallery",
+    "description": "Explore moments from our classes, cultural events, and student activities.",
+    "viewAll": "View All Photos",
+    "categories": {
+      "classes": "Classes",
+      "events": "Events",
+      "activities": "Activities",
+      "campus": "Campus"
+    }
+  },
+  "noticeBoard": {
+    "title": "Notice Board",
+    "allNotices": "All Notices",
+    "recentNotices": "Recent Notices",
+    "importantNotices": "Important Notices",
+    "noNotices": "No notices available at the moment",
+    "readMore": "Read More",
+    "postedOn": "Posted on"
+  },
+  "news": {
+    "title": "Latest News",
+    "allNews": "All News",
+    "recentNews": "Recent News",
+    "readMore": "Read More",
+    "postedOn": "Posted on",
+    "noNews": "No news available at the moment"
+  },
+  "navbar": {
+    "search": "Search...",
+    "login": "Login",
+    "register": "Register",
+    "myAccount": "My Account",
+    "dashboard": "Dashboard",
+    "logout": "Logout"
+  },
+  "menu": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "course": "COURSE",
+    "longCourse": "Long Intensive Course",
+    "shortCourse": "Short Intensive Course",
+    "privateCourse": "Private Course",
+    "notice": "NOTICE",
+    "studentInfo": "STUDENT INFO",
+    "studentResult": "Student Result",
+    "studentVerifyId": "Student Verify ID",
+    "studentApply": "Student Apply",
+    "jlptTest": "JLPT TEST",
+    "jlptTest1": "JLPT Test 1",
+    "jlptTest2": "JLPT Test 2",
+    "jlptTest3": "JLPT Test 3",
+    "jlptTest4": "JLPT Test 4",
+    "news": "News",
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "notice": "Notice",
+    "admission": "Admission",
+    "links": "Links",
+    "contact": "Contact",
+    "openingHours": "Opening Hours",
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "closed": "Closed",
+    "contactInfo": "Contact Info",
+    "address": "Address",
+    "addressValue": "A-61/4 (1st Floor), Ali Market, Khilkhet Bazar Road, Bottola, Khilkhet, Dhaka-1229",
+    "phone": "Phone",
+    "email": "Email",
+    "followUs": "Follow Us",
+    "copyright": "© 2025 Japan Ambition Training Center. All rights reserved.",
+    "description": "Japan Ambition Training Center is a leading Japanese language school in Bangladesh, offering comprehensive language courses and cultural programs."
+  },
+  "studentVerification": {
+    "title": "Student ID Verification",
+    "studentId": "Student ID",
+    "enterStudentId": "Enter your Student ID (e.g., 298)",
+    "pleaseEnterStudentId": "Please enter your Student ID",
+    "verifyId": "Verify ID",
+    "verificationResult": "Student Verification Result",
+    "idVerifiedSuccess": "ID Verified Successfully",
+    "studentIdLabel": "Student ID:",
+    "enrollmentDate": "Enrollment Date:",
+    "status": "Status:",
+    "graduateStatus": "Graduate Status:",
+    "close": "Close",
+    "studentNotFound": "Student ID not found. Please check and try again.",
+    "loadingError": "Failed to load student data. Please try again later."
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "graduated": "Graduated",
+    "notGraduated": "Not Graduated"
+  },
+  "pages": {
+    "home": {
+      "title": "Home"
+    },
+    "about": {
+      "title": "About Us",
+      "paragraph1": "Japan Ambition Training Center is one of the leading Japanese language training center in Bangladesh. It offers an easy learning method for Bangladeshi students. The courses are designed especially for the Bangladeshi students.",
+      "paragraph2": "Japan Ambition Training Center has an extraordinary learning method to make each of the students eloquent in Japanese language. This easiest method ensures highest skill in Japanese Language.",
+      "paragraph3": "At the same time, Japan Ambition Training Center ensures the suitable course fee for all the students of Bangladesh."
+    },
+    "contact": {
+      "title": "Contact Us"
+    },
+    "courses": {
+      "long": "Long Intensive Course",
+      "short": "Short Intensive Course",
+      "private": "Private Course"
+    }
+  },
+  "teacher": {
+    "ourManagement": "Our Management",
+    "names": {
+      "abul": "Md Abul Khair Bhuiyan",
+      "golam": "Md Golam Kibria Bhuiyan",
+      "baharul": "Md Baharul Alam Bonny",
+      "salahuddin": "Md Salahuddin"
+    },
+    "roles": {
+      "chairman": "Chairman",
+      "managingDirector": "Managing Director",
+      "directorAdmin": "Director of Administration",
+      "teacher": "Teacher",
+      "instructor": "Instructor"
+    }
+  },
+  "footerTop": {
+    "successPriority": "Your Success is Our Top Priority"
+  },
+  "testimonials": {
+    "title": "Words from Our Graduates"
+  }
+} 

@@ -31,16 +31,6 @@ export default function Header() {
       label: <a href="./student-apply">Student Apply</a>,
     },
   ];
-  const Language = [
-    {
-      items: "1",
-      label: <a href="./#">English</a>,
-    },
-    {
-      items: "2",
-      label: <a href="./#">Japanis</a>,
-    },
-  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -83,11 +73,7 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <CustomDropdown
-              className="nav-item"
-              label="Language"
-              items={Language}
-            />
+           
             <Button
               className="p-2 text-white bg-yellow-300 hover:bg-blue-600 rounded-full"
               aria-label="Search">
@@ -155,11 +141,7 @@ export default function Header() {
                 items={Course}
               />
               <div className="px-4 pt-2 space-y-2">
-                <CustomDropdown
-                  className="nav-item bg-yellow-300"
-                  label="Language"
-                  items={Language}
-                />
+               
                 <button
                   className="w-full text-left text-black px-2 py-2 text-sm font-medium hover:bg-gray-100 rounded-md flex items-center"
                   aria-label="Search">

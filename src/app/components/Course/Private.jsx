@@ -1,7 +1,11 @@
+"use client";
 import { motion } from "framer-motion";
 import { FaAngleRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const PrivateLessons = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className=" py-12 px-6">
       <motion.div
@@ -10,45 +14,38 @@ const PrivateLessons = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}>
         <h2 className="text-4xl font-bold text-red-600 mb-6">
-          Private Lessons
+          {t('pages.courses.private')}
         </h2>
         <p className="text-lg text-gray-700 mb-8">
-          Take your Japanese learning experience to the next level with
-          personalized lessons tailored to your individual needs and pace.
-          Whether you are a beginner or looking to improve your conversation
-          skills, private lessons will accelerate your learning.
+          {t('courses.private.description')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Module 1 */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Beginners Japanese
+              {t('courses.private.module1.title')}
             </h3>
             <p className="text-gray-600 mb-4">
-              A one-on-one lesson designed for absolute beginners. Learn the
-              basics, including pronunciation, simple sentences, and basic
-              kanji.
+              {t('courses.private.module1.description')}
             </p>
             <div className="flex items-center text-red-600">
               <FaAngleRight />
-              <span className="ml-2">Start Lesson</span>
+              <span className="ml-2">{t('courses.startLesson')}</span>
             </div>
           </div>
 
           {/* Module 2 */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Advanced Japanese Conversation
+              {t('courses.private.module2.title')}
             </h3>
             <p className="text-gray-600 mb-4">
-              Improve your speaking skills with private lessons focused on
-              advanced topics like debates, current events, and business
-              Japanese.
+              {t('courses.private.module2.description')}
             </p>
             <div className="flex items-center text-red-600">
               <FaAngleRight />
-              <span className="ml-2">Start Lesson</span>
+              <span className="ml-2">{t('courses.startLesson')}</span>
             </div>
           </div>
         </div>

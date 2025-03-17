@@ -1,16 +1,23 @@
 "use client";
 import React from "react";
-import { Typography, Tag, Divider, Avatar, Space } from "antd";
-
+import { Typography, Tag, Divider, Avatar, Space, Button, Form, Input } from "antd";
+import { useTranslation } from "react-i18next";
 import {
   CalendarOutlined,
   UserOutlined,
   CommentOutlined,
+  ShareAltOutlined,
+  FacebookOutlined,
+  TwitterOutlined,
+  LinkedinOutlined,
 } from "@ant-design/icons";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
+const { TextArea } = Input;
 
 const BlogPost = () => {
+  const { t } = useTranslation();
+
   return (
     <article className="max-w-4xl mx-auto px-4 py-8">
       <Typography>
@@ -27,15 +34,15 @@ const BlogPost = () => {
         <Space size="large" className="my-4">
           <Space>
             <CalendarOutlined />
-            <span>December 15, 2023</span>
+            <span>{t('blog.date')}: December 15, 2023</span>
           </Space>
           <Space>
             <UserOutlined />
-            <span>Dr. Jane Smith</span>
+            <span>{t('blog.author')}: Dr. Jane Smith</span>
           </Space>
           <Space>
             <CommentOutlined />
-            <span>12 Comments</span>
+            <span>12 {t('blog.comments')}</span>
           </Space>
         </Space>
 
@@ -48,93 +55,147 @@ const BlogPost = () => {
           className="w-full rounded-lg my-6 object-cover"
         />
 
-        <Paragraph>
-          The landscape of higher education is rapidly evolving, with online
-          learning at the forefront of this transformation. As we move further
-          into the digital age, universities and colleges are reimagining their
-          approach to education, leveraging technology to create more
-          accessible, flexible, and engaging learning experiences.
+        <Paragraph className="text-lg leading-relaxed my-6">
+          The landscape of higher education is rapidly evolving, with online learning becoming increasingly central to the academic experience. As we look toward the future, several key trends are emerging that will shape how students learn and how institutions deliver education.
         </Paragraph>
 
-        <Title level={2}>The Rise of Hybrid Learning Models</Title>
-
-        <Paragraph>
-          One of the most significant trends were seeing is the adoption of
-          hybrid learning models. These models combine the best aspects of
-          traditional classroom instruction with the flexibility and reach of
-          online education. Students can attend lectures in person or virtually,
-          participate in online discussions, and access course materials at any
-          time.
+        <Title level={2} className="mt-8 mb-4">
+          Personalized Learning Experiences
+        </Title>
+        <Paragraph className="text-lg leading-relaxed">
+          One of the most significant advantages of online education is the ability to tailor learning experiences to individual students. Advanced algorithms can analyze student performance and adapt content delivery to match their learning pace and style. This personalization can lead to better outcomes and higher engagement rates.
         </Paragraph>
 
-        <Paragraph>
-          This approach not only caters to different learning styles but also
-          makes higher education more accessible to those who may have work or
-          family commitments that prevent them from attending traditional
-          on-campus programs.
-        </Paragraph>
-
-        <Title level={2}>Personalized Learning Pathways</Title>
-
-        <Paragraph>
-          Artificial Intelligence AI and machine learning are playing an
-          increasingly important role in online education. These technologies
-          can analyze a students learning patterns, strengths, and weaknesses to
-          create personalized learning pathways. This tailored approach ensures
-          that each student receives the support and challenges they need to
-          succeed.
-        </Paragraph>
-
-        <Title level={2}>Virtual and Augmented Reality in Education</Title>
-
-        <Paragraph>
-          Virtual Reality VR and Augmented Reality AR are set to revolutionize
-          how certain subjects are taught. Imagine medical students performing
-          virtual surgeries, history students walking through ancient
-          civilizations, or engineering students manipulating 3D models of
-          complex machinery. These immersive experiences can significantly
-          enhance understanding and retention.
-        </Paragraph>
-
-        <Title level={2}>The Challenge of Digital Equity</Title>
-
-        <Paragraph>
-          As we embrace online learning, it&apos;s crucial to address the issue
-          of digital equity. Not all students have equal access to the
-          technology and high-speed internet required for effective online
-          learning. Educational institutions and policymakers must work together
-          to ensure that the shift to online education does not leave any
-          students behind.
-        </Paragraph>
-
-        <Title level={2}>Conclusion</Title>
-
-        <Paragraph>
-          The future of online learning in higher education is bright and full
-          of possibilities. By embracing new technologies and innovative
-          teaching methods, we can create more inclusive, engaging, and
-          effective educational experiences. However, it is important to
-          approach this future thoughtfully, ensuring that we maintain the
-          quality of education and address challenges like digital equity along
-          the way.
+        <Title level={2} className="mt-8 mb-4">
+          Virtual Reality and Immersive Learning
+        </Title>
+        <Paragraph className="text-lg leading-relaxed">
+          Virtual reality (VR) and augmented reality (AR) technologies are opening new possibilities for immersive learning experiences. Medical students can practice surgeries in virtual operating rooms, while history students can walk through ancient civilizations. These technologies bridge the gap between theoretical knowledge and practical application.
         </Paragraph>
 
         <Divider />
 
-        <Space align="center" size="large">
-          <Avatar size={64} icon={<UserOutlined />} />
+        <div className="flex justify-between items-center my-6">
           <div>
-            <Title level={4} style={{ margin: 0 }}>
-              Dr. Jane Smith
-            </Title>
-            <Paragraph>
-              Dr. Jane Smith is a Professor of Educational Technology at
-              Evergreen University. She has been researching the impact of
-              technology on education for over 15 years and is a frequent
-              speaker at international conferences.
-            </Paragraph>
+            <Text strong>{t('blog.tags')}:</Text>
+            <Space size={[0, 8]} wrap className="ml-2">
+              <Tag color="blue">Education</Tag>
+              <Tag color="green">Technology</Tag>
+              <Tag color="orange">Future</Tag>
+            </Space>
           </div>
-        </Space>
+          <div>
+            <Text strong className="mr-2">{t('blog.sharePost')}:</Text>
+            <Space>
+              <Button
+                type="text"
+                icon={<FacebookOutlined />}
+                className="text-blue-600"
+              />
+              <Button
+                type="text"
+                icon={<TwitterOutlined />}
+                className="text-blue-400"
+              />
+              <Button
+                type="text"
+                icon={<LinkedinOutlined />}
+                className="text-blue-800"
+              />
+            </Space>
+          </div>
+        </div>
+
+        <Divider />
+
+        <div className="my-8">
+          <Title level={3}>{t('blog.relatedPosts')}</Title>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+            {/* Related post cards would go here */}
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="border rounded-lg overflow-hidden">
+                <img
+                  src={`/images/gallery-${item}.jpg`}
+                  alt="Related post"
+                  className="w-full h-40 object-cover"
+                />
+                <div className="p-4">
+                  <h4 className="font-semibold mb-2">
+                    Related Article Title Here
+                  </h4>
+                  <p className="text-sm text-gray-500">December 10, 2023</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Divider />
+
+        <div className="my-8">
+          <Title level={3}>12 {t('blog.comments')}</Title>
+          {/* Comments would go here */}
+          <div className="space-y-6 mt-4">
+            {[1, 2].map((item) => (
+              <div key={item} className="flex space-x-4">
+                <Avatar size={48} icon={<UserOutlined />} />
+                <div className="flex-1">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <div className="flex justify-between">
+                      <Text strong>Comment Author</Text>
+                      <Text type="secondary">December 16, 2023</Text>
+                    </div>
+                    <Paragraph className="mt-2">
+                      This is a sample comment on the blog post. It could discuss
+                      the content, ask questions, or provide additional insights.
+                    </Paragraph>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Divider />
+
+        <div className="my-8">
+          <Title level={3}>{t('blog.leaveComment')}</Title>
+          <Form layout="vertical" className="mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Form.Item
+                name="name"
+                label={t('blog.yourName')}
+                rules={[{ required: true, message: "Please input your name!" }]}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                name="email"
+                label={t('blog.yourEmail')}
+                rules={[
+                  { required: true, message: "Please input your email!" },
+                  { type: "email", message: "Please enter a valid email!" },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+            </div>
+            <Form.Item
+              name="comment"
+              label={t('blog.yourComment')}
+              rules={[
+                { required: true, message: "Please input your comment!" },
+              ]}
+            >
+              <TextArea rows={4} />
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                {t('blog.submit')}
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
       </Typography>
     </article>
   );

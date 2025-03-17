@@ -253,7 +253,7 @@ export default function StudentRegistrationForm() {
                   },
                 ]}>
                 <Select placeholder="Select a language">
-                  <Option value="english">English</Option>
+                  <Option value="english">Japanese</Option>
                   <Option value="french">French</Option>
                   <Option value="german">German</Option>
                   <Option value="spanish">Spanish</Option>

@@ -1,4 +1,5 @@
 import { TestimonialCard } from "./TestimonialCard.jsx";
+import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
@@ -18,10 +19,11 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+  const { t } = useTranslation();
   return (
     <section className=" px-4 mb-10 max-w-6xl mx-auto">
       <h2 className="text-4xl font-bold pb-4 md:pb-16 text-center">
-        Words from Our Graduates
+      {t('testimonials.title')} 
       </h2>
       <div className="grid md:grid-cols-2 gap-12">
         {testimonials.map((testimonial, index) => (

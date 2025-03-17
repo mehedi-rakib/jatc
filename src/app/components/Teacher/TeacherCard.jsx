@@ -1,49 +1,52 @@
+"use client";
 import { Card } from "antd";
+import { useTranslation } from "react-i18next";
+
 const { Meta } = Card;
 
-const golamMTitle = "Md Golam Kibria Bhuiyan";
-const golamMDesc = "Managing Director";
-const golamImgSrc = "/images/golam-kibria.png";
+const TeacherCard = () => {
+  const { t } = useTranslation();
+  
+  const teachers = [
+    {
+      id: 1,
+      name: t('teacher.names.abul', 'Md Abul Khair Bhuiyan'),
+      role: t('teacher.roles.chairman', 'Chairman'),
+      image: "/images/chairman.png"
+    },
+    {
+      id: 2,
+      name: t('teacher.names.golam', 'Md Golam Kibria Bhuiyan'),
+      role: t('teacher.roles.managingDirector', 'Managing Director'),
+      image: "/images/golam-kibria.png"
+    },
+    {
+      id: 3,
+      name: t('teacher.names.baharul', 'Md Baharul Alam Bonny'),
+      role: t('teacher.roles.directorAdmin', 'Director of Administration'),
+      image: "/images/baharul.png"
+    },
+    {
+      id: 4,
+      name: t('teacher.names.salahuddin', 'Md Salahuddin'),
+      role: t('teacher.roles.directorAdmin', 'Director of Administration'),
+      image: "/images/salahuddin.png"
+    }
+  ];
 
-const chMTitle = "Md Abul Khair Bhuiyan";
-const chMDesc = "Chairman";
-const chImgSrc = "/images/chairman.png";
+  return (
+    <div className="md:flex justify-center items-center gap-8">
+      {teachers.map(teacher => (
+        <Card
+          key={teacher.id}
+          hoverable
+          className="my-10 w-full"
+          cover={<img alt={teacher.name} src={teacher.image} />}>
+          <Meta title={teacher.name} description={teacher.role} />
+        </Card>
+      ))}
+    </div>
+  );
+};
 
-const bhMTitle = "Md Baharul Alam Bonny";
-const bhMDesc = "Director of Administration";
-const bhImgSrc = "/images/baharul.png";
-const TeacherCard = () => (
-  //space-y-4
-  <div className=" md:flex  justify-center items-center gap-8">
-    <Card
-      hoverable
-      //mobile full width
-      // style={{
-      //   width: 240,
-      // }}
-      className="my-10 w-full"
-      cover={<img alt={chMTitle} src={chImgSrc} />}>
-      <Meta title={chMTitle} description={chMDesc} />
-    </Card>
-    <Card
-      hoverable
-      className="my-10 md:my-0 w-full"
-      // className="w-[240px] md:w-full px-2"
-      cover={<img alt={golamMTitle} src={golamImgSrc} />}>
-      <Meta title={golamMTitle} description={golamMDesc} />
-    </Card>
-    <Card
-      hoverable
-      className="my-10 w-full"
-      cover={<img alt={bhMTitle} src={bhImgSrc} />}>
-      <Meta title={bhMTitle} description={bhMDesc} />
-    </Card>
-    <Card
-      hoverable
-      className="my-10 w-full"
-      cover={<img alt="Md Salahuddin" src="/images/salahuddin.png" />}>
-      <Meta title="Md Salahuddin" description="Director of Administration" />
-    </Card>
-  </div>
-);
 export default TeacherCard;

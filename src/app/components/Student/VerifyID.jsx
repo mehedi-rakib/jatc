@@ -1,37 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, Input, Button, message, Card, Typography, Modal } from "antd";
-import { CheckCircleOutlined, CloseCircleOutlined } from "@ant-design/icons";
+import { CheckCircleOutlined } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 
 const { Title, Text } = Typography;
 
-// Dummy data for student verification
-const studentDatabase = {
-  LTC001: {
-    name: "John Doe",
-    enrollmentDate: "2023-01-15",
-    course: "English Proficiency",
-    status: "Active",
-  },
-  LTC002: {
-    name: "Jane Smith",
-    enrollmentDate: "2023-02-01",
-    course: "French Proficiency",
-    status: "Active",
-  },
-  LTC003: {
-    name: "Mike Johnson",
-    enrollmentDate: "2022-09-10",
-    course: "German Proficiency",
-    status: "Graduated",
-  },
-};
+// Static student data
+const staticStudentData = [
+  {"id":1,"roll_no":"298","active_status":1,"created_at":"2025-03-10 19:42:56","is_graduate":0},
+  {"id":2,"roll_no":"299","active_status":1,"created_at":"2025-03-10 19:42:56","is_graduate":0},
+  {"id":3,"roll_no":"300","active_status":1,"created_at":"2025-03-10 19:42:56","is_graduate":0},
+  {"id":4,"roll_no":"301","active_status":1,"created_at":"2025-03-10 19:42:56","is_graduate":0},
+  {"id":5,"roll_no":"302","active_status":1,"created_at":"2025-03-10 19:42:56","is_graduate":0}
+];
 
 export default function StudentIDVerification() {
+  const { t, i18n } = useTranslation();
   const [form] = Form.useForm();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [studentInfo, setStudentInfo] = useState(null);
+  const [studentDatabase, setStudentDatabase] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  // Initialize student data on component mount
+  useEffect(() => {
+    try {
+      // Transform static data into a lookup object with roll_no as key
+      const database = staticStudentData.reduce((acc, student) => {
+        acc[student.roll_no] = {
+          id: student.id,
+          enrollmentDate: student.created_at.split(' ')[0],
+          status: student.active_status === 1 ? t('status.active') : t('status.inactive'),
+          graduateStatus: student.is_graduate === 1 ? t('status.graduated') : t('status.notGraduated')
+        };
+        return acc;
+      }, {});
+      
+      setStudentDatabase(database);
+    } catch (error) {
+      console.error("Error processing student data:", error);
+      message.error(t('studentVerification.loadingError'));
+    } finally {
+      setLoading(false);
+    }
+  }, [i18n.language, t]);
 
   const onFinish = (values) => {
     const { studentId } = values;
@@ -39,7 +53,7 @@ export default function StudentIDVerification() {
       setStudentInfo(studentDatabase[studentId]);
       setIsModalVisible(true);
     } else {
-      message.error("Student ID not found. Please check and try again.");
+      message.error(t('studentVerification.studentNotFound'));
     }
   };
 
@@ -52,62 +66,62 @@ export default function StudentIDVerification() {
     <section className="py-16 px-4 max-w-md mx-auto pb-10 md:pb-48">
       <Card className="shadow-md">
         <Title level={2} className="text-center mb-8">
-          Student ID Verification
+          {t('studentVerification.title')}
         </Title>
 
         <Form form={form} onFinish={onFinish} layout="vertical">
           <Form.Item
             name="studentId"
-            label="Student ID"
-            rules={[
-              { required: true, message: "Please input your Student ID!" },
-              {
-                pattern: /^LTC\d{3}$/,
-                message:
-                  "Student ID should be in the format LTC followed by 3 digits",
-              },
-            ]}>
-            <Input placeholder="Enter your Student ID (e.g., LTC001)" />
+            label={t('studentVerification.studentId')}
+            rules={[{ required: true, message: t('studentVerification.pleaseEnterStudentId') }]}
+           >
+            <Input placeholder={t('studentVerification.enterStudentId')} />
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="w-full">
-              Verify ID
+            <Button 
+              type="primary" 
+              htmlType="submit" 
+              className="w-full"
+              loading={loading}
+              disabled={loading}
+            >
+              {t('studentVerification.verifyId')}
             </Button>
           </Form.Item>
         </Form>
 
         <Modal
-          title="Student Verification Result"
-          visible={isModalVisible}
+          title={t('studentVerification.verificationResult')}
+          open={isModalVisible}
           onOk={closeModal}
           onCancel={closeModal}
           footer={[
             <Button key="close" onClick={closeModal}>
-              Close
-            </Button>,
+              {t('studentVerification.close')}
+            </Button>
           ]}>
           {studentInfo && (
             <div>
               <div className="flex items-center mb-4">
                 <CheckCircleOutlined className="text-green-500 text-2xl mr-2" />
                 <Text strong className="text-lg">
-                  ID Verified Successfully
+                  {t('studentVerification.idVerifiedSuccess')}
                 </Text>
               </div>
               <ul className="list-none p-0">
                 <li className="mb-2">
-                  <Text strong>Name:</Text> {studentInfo.name}
+                  <Text strong>{t('studentVerification.studentIdLabel')}</Text> {form.getFieldValue('studentId')}
                 </li>
                 <li className="mb-2">
-                  <Text strong>Enrollment Date:</Text>{" "}
+                  <Text strong>{t('studentVerification.enrollmentDate')}</Text>{" "}
                   {studentInfo.enrollmentDate}
                 </li>
                 <li className="mb-2">
-                  <Text strong>Course:</Text> {studentInfo.course}
+                  <Text strong>{t('studentVerification.status')}</Text> {studentInfo.status}
                 </li>
                 <li className="mb-2">
-                  <Text strong>Status:</Text> {studentInfo.status}
+                  <Text strong>{t('studentVerification.graduateStatus')}</Text> {studentInfo.graduateStatus}
                 </li>
               </ul>
             </div>

@@ -1,0 +1,296 @@
+{
+  "common": {
+    "languageSwitch": "言語",
+    "english": "English",
+    "japanese": "日本語",
+    "bangla": "বাংলা",
+    "login": "ログイン",
+    "search": "検索",
+    "hotline": "ホットライン: 01715-458036"
+  },
+  "hero": {
+    "slide1": {
+      "title": "日本で勉強と仕事",
+      "description": "日本での勉強と仕事の機会について詳しく知りましょう。"
+    },
+    "slide2": {
+      "title": "ジャパン・アンビション・トレーニングセンターへようこそ",
+      "description": "質の高い教育を提供し、より明るい未来のために若い心を育てます。"
+    }
+  },
+  "features": {
+    "news": {
+      "description": "日本語を簡単に学ぶ方法を学びましょう。"
+    },
+    "schedule": {
+      "title": "スケジュール",
+      "description": "学生の便宜のために朝・昼・夕方のシフトがあります。"
+    },
+    "notice": {
+      "description": "入学受付中。申し込みはプログラムコーディネーターにお問い合わせください。"
+    },
+    "achieve": {
+      "title": "成果",
+      "description": "修了したコースの結果が公開されました。今すぐ確認できます。"
+    }
+  },
+  "blog": {
+    "title": "ブログ",
+    "search": "ブログ記事を検索",
+    "category": "カテゴリー",
+    "allCategories": "すべてのカテゴリー",
+    "readTime": "分で読める",
+    "readMore": "続きを読む",
+    "recentPosts": "最近の投稿",
+    "categories": "カテゴリー",
+    "tags": "タグ",
+    "comments": "コメント",
+    "author": "著者",
+    "date": "日付",
+    "relatedPosts": "関連記事",
+    "sharePost": "この記事をシェアする",
+    "leaveComment": "コメントを残す",
+    "yourName": "お名前",
+    "yourEmail": "メールアドレス",
+    "yourComment": "コメント",
+    "submit": "送信",
+    "pagination": "ページ"
+  },
+  "contact": {
+    "getInTouch": "お問い合わせ",
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "subject": "件名",
+    "message": "メッセージ",
+    "submit": "送信",
+    "pleaseInputFirstName": "名を入力してください！",
+    "pleaseInputLastName": "姓を入力してください！",
+    "pleaseInputEmail": "メールアドレスを入力してください！",
+    "pleaseInputValidEmail": "有効なメールアドレスを入力してください！",
+    "pleaseInputPhone": "電話番号を入力してください！",
+    "pleaseInputSubject": "件名を入力してください！",
+    "pleaseInputMessage": "メッセージを入力してください！",
+    "emailPlaceholder": "メールアドレス",
+    "phonePlaceholder": "電話番号",
+    "subjectPlaceholder": "件名",
+    "messagePlaceholder": "ここにメッセージを書いてください...",
+    "mapTitle": "ジャパン・アンビション・トレーニングセンターの場所"
+  },
+  "courses": {
+    "startCourse": "コースを始める",
+    "startLesson": "レッスンを始める",
+    "features": {
+      "title": "学習内容",
+      "hiraganaKatakana": "ひらがなとカタカナをマスター",
+      "basicGrammar": "基本的な文法パターンを理解する",
+      "simpleConversations": "日本語で簡単な会話ができるようになる",
+      "culture": "日本の文化と伝統について学ぶ"
+    },
+    "long": {
+      "description": "長期集中日本語コースは、非常に速いペースで日本語をマスターするのに役立ちます。このコースは、会話、発音、リスニング、読解、作文に焦点を当てています。明確かつ効果的にコミュニケーションする能力の向上に重点を置いています。",
+      "module1": {
+        "title": "日本語入門",
+        "description": "初心者向けの日本語入門コースで、基本的な文法と語彙に焦点を当てています。基本的なフレーズと日本の習慣について学びます。"
+      },
+      "module2": {
+        "title": "中級日本語",
+        "description": "中級学習者向けのこのモジュールでは、より複雑な文構造、漢字、会話練習に深く掘り下げます。"
+      },
+      "module3": {
+        "title": "上級日本語",
+        "description": "上級学習者向けのこのモジュールでは、流暢な会話、複雑な読み書き、文化的なニュアンスに焦点を当てています。"
+      },
+      "module4": {
+        "title": "ビジネス日本語",
+        "description": "ビジネスコンテキストで日本語が必要な方向けの専門コースで、フォーマルな言語、ビジネスエチケット、ビジネス文書の書き方などが含まれます。"
+      }
+    },
+    "short": {
+      "description": "この短期集中コースは、旅行や短期使用のために必要な日本語のフレーズや語彙を素早く学びたい方向けに設計されています。楽しくインタラクティブな形式で、会話、読解、基本的な文化的認識をカバーします。",
+      "module1": {
+        "title": "サバイバル日本語",
+        "description": "旅行者向けの短期集中コースで、食事の注文や道順を尋ねるなど、日常的な状況で使える基本的な表現や丁寧なフレーズを教えます。"
+      },
+      "module2": {
+        "title": "観光客のための日本語",
+        "description": "旅行に特化した語彙、一般的な質問、日本を簡単に移動するためのフレーズに焦点を当てています。"
+      }
+    },
+    "private": {
+      "description": "あなたの個人的なニーズとペースに合わせたパーソナライズされたレッスンで、日本語学習体験を次のレベルに引き上げましょう。初心者であっても、会話スキルを向上させたい方であっても、プライベートレッスンで学習を加速させます。",
+      "module1": {
+        "title": "初心者向け日本語",
+        "description": "完全な初心者向けに設計された1対1のレッスン。発音、簡単な文章、基本的な漢字など、基礎を学びます。"
+      },
+      "module2": {
+        "title": "上級日本語会話",
+        "description": "ディベート、時事問題、ビジネス日本語などの高度なトピックに焦点を当てたプライベートレッスンで、会話スキルを向上させます。"
+      }
+    }
+  },
+  "onlineLearning": {
+    "title": "オンライン学習",
+    "description": "世界中どこからでも日本語コースにアクセスできます。包括的なオンラインカリキュラムで自分のペースで学びましょう。",
+    "features": {
+      "videoLessons": "HD ビデオレッスン",
+      "videoLessonsDesc": "学習者のペースと自信をサポートする適応型メソッドを備えたパーソナライズされた日本語コース。",
+      "interactiveMaterials": "インタラクティブな学習教材",
+      "interactiveMaterialsDesc": "複雑な文法、流暢さ、試験準備に焦点を当てた上級学生向けの高度なトレーニング。",
+      "liveClasses": "ライブ仮想クラス",
+      "liveClassesDesc": "読み書き、会話、リスニングのバランスが取れた構造化されたカリキュラムで着実に進歩します。",
+      "practiceExercises": "練習問題とクイズ"
+    },
+    "startLearning": "学習を始める",
+    "learnMore": "詳細を見る"
+  },
+  "photoGallery": {
+    "title": "フォトギャラリー",
+    "description": "授業、文化イベント、学生活動の様子をご覧ください。",
+    "viewAll": "すべての写真を見る",
+    "categories": {
+      "classes": "授業",
+      "events": "イベント",
+      "activities": "活動",
+      "campus": "キャンパス"
+    }
+  },
+  "noticeBoard": {
+    "title": "お知らせボード",
+    "allNotices": "すべてのお知らせ",
+    "recentNotices": "最近のお知らせ",
+    "importantNotices": "重要なお知らせ",
+    "noNotices": "現在お知らせはありません",
+    "readMore": "続きを読む",
+    "postedOn": "投稿日"
+  },
+  "news": {
+    "title": "最新ニュース",
+    "allNews": "すべてのニュース",
+    "recentNews": "最近のニュース",
+    "readMore": "続きを読む",
+    "postedOn": "投稿日",
+    "noNews": "現在ニュースはありません"
+  },
+  "navbar": {
+    "search": "検索...",
+    "login": "ログイン",
+    "register": "登録",
+    "myAccount": "マイアカウント",
+    "dashboard": "ダッシュボード",
+    "logout": "ログアウト"
+  },
+  "menu": {
+    "home": "ホーム",
+    "about": "私たちについて",
+    "course": "コース",
+    "longCourse": "長期集中コース",
+    "shortCourse": "短期集中コース",
+    "privateCourse": "プライベートコース",
+    "notice": "お知らせ",
+    "studentInfo": "学生情報",
+    "studentResult": "学生の結果",
+    "studentVerifyId": "学生ID確認",
+    "studentApply": "学生申込",
+    "jlptTest": "JLPT試験",
+    "jlptTest1": "JLPT試験1",
+    "jlptTest2": "JLPT試験2",
+    "jlptTest3": "JLPT試験3",
+    "jlptTest4": "JLPT試験4",
+    "news": "ニュース",
+    "blog": "ブログ",
+    "gallery": "ギャラリー",
+    "contact": "お問い合わせ"
+  },
+  "footer": {
+    "quickLinks": "クイックリンク",
+    "home": "ホーム",
+    "about": "私たちについて",
+    "blog": "ブログ",
+    "notice": "お知らせ",
+    "admission": "入学",
+    "links": "リンク",
+    "contact": "お問い合わせ",
+    "openingHours": "営業時間",
+    "sunday": "日曜日",
+    "monday": "月曜日",
+    "tuesday": "火曜日",
+    "wednesday": "水曜日",
+    "thursday": "木曜日",
+    "friday": "金曜日",
+    "saturday": "土曜日",
+    "closed": "休業",
+    "contactInfo": "連絡先",
+    "address": "住所",
+    "addressValue": "A-61/4 (1階), アリマーケット, キルケットバザールロード, ボットラ, キルケット, ダッカ-1229",
+    "phone": "電話",
+    "email": "メール",
+    "followUs": "フォローする",
+    "copyright": "© 2025 ジャパン・アンビション・トレーニングセンター. All rights reserved.",
+    "description": "ジャパン・アンビション・トレーニングセンターは、バングラデシュの主要な日本語学校であり、包括的な言語コースと文化プログラムを提供しています。"
+  },
+  "studentVerification": {
+    "title": "学生ID確認",
+    "studentId": "学生ID",
+    "enterStudentId": "学生IDを入力してください",
+    "pleaseEnterStudentId": "学生IDを入力してください",
+    "verifyId": "IDを確認",
+    "verificationResult": "学生確認結果",
+    "idVerifiedSuccess": "ID確認成功",
+    "studentIdLabel": "学生ID：",
+    "enrollmentDate": "入学日：",
+    "status": "状態：",
+    "graduateStatus": "卒業状態：",
+    "close": "閉じる",
+    "studentNotFound": "学生IDが見つかりません。確認して再試行してください。",
+    "loadingError": "学生データの読み込みに失敗しました。後でもう一度お試しください。"
+  },
+  "status": {
+    "active": "アクティブ",
+    "inactive": "非アクティブ",
+    "graduated": "卒業",
+    "notGraduated": "未卒業"
+  },
+  "pages": {
+    "home": {
+      "title": "ホーム"
+    },
+    "about": {
+      "title": "私たちについて",
+      "paragraph1": "ジャパン・アンビション・トレーニングセンターは、バングラデシュの主要な日本語トレーニングセンターの一つです。バングラデシュの学生のために簡単な学習方法を提供しています。コースはバングラデシュの学生のために特別に設計されています。",
+      "paragraph2": "ジャパン・アンビション・トレーニングセンターは、学生一人ひとりが日本語を流暢に話せるようにするための特別な学習方法を持っています。この最も簡単な方法で、日本語の最高のスキルを確保します。",
+      "paragraph3": "同時に、ジャパン・アンビション・トレーニングセンターは、バングラデシュのすべての学生に適切なコース料金を保証しています。"
+    },
+    "contact": {
+      "title": "お問い合わせ"
+    },
+    "courses": {
+      "long": "長期集中コース",
+      "short": "短期集中コース",
+      "private": "プライベートコース"
+    }
+  },
+  "teacher": {
+    "ourManagement": "経営陣",
+    "names": {
+      "abul": "モハマド・アブル・カイル・ブイヤン",
+      "golam": "モハマド・ゴラム・キブリア・ブイヤン",
+      "baharul": "モハマド・バハルル・アラム・ボニー",
+      "salahuddin": "モハマド・サラフディン"
+    },
+    "roles": {
+      "chairman": "会長",
+      "managingDirector": "専務取締役",
+      "directorAdmin": "管理部長",
+      "teacher": "教師",
+      "instructor": "インストラクター"
+    }
+  },
+  "footerTop": {
+    "successPriority": "あなたの成功は私たちの最優先事項です"
+  },
+  "testimonials": {
+    "title": "卒業生からの声"
+  }
+} 

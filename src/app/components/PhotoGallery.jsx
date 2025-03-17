@@ -2,8 +2,11 @@
 
 import { Image } from "antd";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function PhotoGallery() {
+  const { t } = useTranslation();
+  
   const images = [
     // {
     //   src: "/images/gallery-1.jpg",
@@ -11,15 +14,15 @@ export default function PhotoGallery() {
     // },
     {
       src: "/images/gallery-2.jpg",
-      alt: "Group of diverse children smiling",
+      alt: t('photoGallery.categories.classes'),
     },
     {
       src: "/images/gallery-3.jpg",
-      alt: "Child with alphabet letters",
+      alt: t('photoGallery.categories.activities'),
     },
     {
       src: "/images/gallery-4.jpg",
-      alt: "Children playing with colorful toys",
+      alt: t('photoGallery.categories.events'),
     },
     // {
     //   src: "/images/gallery-5.jpg",
@@ -37,15 +40,15 @@ export default function PhotoGallery() {
         {/* Left Content */}
         <div>
           <h2 className="text-4xl font-bold mb-4 text-[#663399]">
-            Photo Gallery
+            {t('photoGallery.title')}
           </h2>
           <p className="text-gray-600 mb-8">
-            Explore a collection of stunning photos capturing unforgettable moments and breathtaking scenes.
+            {t('photoGallery.description')}
           </p>
           <Link
-            href="/#"
+            href="/gallery"
             className="inline-block bg-green-400 hover:bg-red-600 text-white px-8 py-3 rounded-md font-medium transition-colors">
-            VIEW ALL GALLERY
+            {t('photoGallery.viewAll')}
           </Link>
         </div>
 

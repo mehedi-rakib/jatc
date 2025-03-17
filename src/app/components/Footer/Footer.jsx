@@ -1,25 +1,29 @@
+"use client";
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const quickLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about-us" },
-    { name: "Blog", href: "/blog" },
-    { name: "Notice", href: "/notice" },
-    { name: "Admission", href: "/student-apply" },
-    { name: "Links", href: "/#" },
-    { name: "Contact", href: "/contact-us" },
+    { name: t('footer.home'), href: "/" },
+    { name: t('footer.about'), href: "/about-us" },
+    { name: t('footer.blog'), href: "/blog" },
+    { name: t('footer.notice'), href: "/notice" },
+    { name: t('footer.admission'), href: "/student-apply" },
+    { name: t('footer.links'), href: "/#" },
+    { name: t('footer.contact'), href: "/contact-us" },
   ];
 
   const openingHours = [
-    { day: "Sunday", time: "10:00 - 20:00" },
-    { day: "Monday", time: "10:00 - 20:00" },
-    { day: "Tuesday", time: "10:00 - 20:00" },
-    { day: "Wednesday", time: "10:00 - 20:00" },
-    { day: "Thursday", time: "10:00 - 20:00" },
-    { day: "Friday", time: "Closed" },
-    { day: "Saturday", time: "10:00 - 20:00" },
+    { day: t('footer.sunday'), time: "10:00 - 20:00" },
+    { day: t('footer.monday'), time: "10:00 - 20:00" },
+    { day: t('footer.tuesday'), time: "10:00 - 20:00" },
+    { day: t('footer.wednesday'), time: "10:00 - 20:00" },
+    { day: t('footer.thursday'), time: "10:00 - 20:00" },
+    { day: t('footer.friday'), time: t('footer.closed') },
+    { day: t('footer.saturday'), time: "10:00 - 20:00" },
   ];
 
   const socialLinks = [
@@ -51,25 +55,21 @@ export default function Footer() {
                   />
                 </div>
               </Link>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Japan Ambition Training Center is a leading Japanese language
-                institute in Bangladesh, offering easy and effective learning
-                methods. Our courses are tailored for Bangladeshi students,
-                ensuring fluency and skill development. Join us for quality
-                education at an affordable cost.
+              <p className="text-gray-300 text-sm">
+                {t('footer.description', 'Japan Ambition Training Center is a leading Japanese language school in Bangladesh, offering comprehensive language courses and cultural programs.')}
               </p>
             </div>
 
             {/* Quick Links */}
-            <div className="pr-10 w-3/4">
-              <h3 className="text-xl font-bold mb-4">Quick links</h3>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">{t('footer.quickLinks')}</h3>
               <ul className="space-y-2">
-                {quickLinks.map((link) => (
-                  <li key={link.name}>
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                      <span className="text-[#E31E24]">▸</span>
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       {link.name}
                     </Link>
                   </li>
@@ -79,115 +79,63 @@ export default function Footer() {
 
             {/* Opening Hours */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Opening Hours</h3>
+              <h3 className="text-xl font-semibold mb-4">{t('footer.openingHours')}</h3>
               <ul className="space-y-2">
-                {openingHours.map((schedule) => (
-                  <li
-                    key={schedule.day}
-                    className="flex justify-between text-gray-400">
-                    <span>{schedule.day}</span>
-                    <span>{schedule.time}</span>
+                {openingHours.map((item, index) => (
+                  <li key={index} className="text-gray-300">
+                    <span className="flex justify-between">
+                      <span>{item.day}</span>
+                      <span>{item.time}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Get in Touch */}
+            {/* Contact Info */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
-              <div className="space-y-4">
-                <p className="flex items-start gap-3 text-gray-400">
-                  <svg
-                    className="w-6 h-6 mt-1 shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    {/* Khilkhet Bazar Road, Bottola , */}
-                  </svg>
-                  A-61/4 (1st floor), Ali Market, Khilkhet,Dhaka- 1229
-                </p>
-                <p className="flex items-center gap-3 text-gray-400">
-                  <svg
-                    className="w-6 h-6 shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  jalc.bd2024@gmail.com
-                </p>
-                <p className="flex items-center gap-3 text-gray-400">
-                  <svg
-                    className="w-6 h-6 shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  01300-302099
-                </p>
-                <p className="flex items-center gap-3 text-gray-400">
-                  <svg
-                    className="w-6 h-6 shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  01715-458036
-                </p>
-                <div className="flex gap-3 pt-2">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      className={`${social.color} p-2 rounded-full hover:opacity-80 transition-opacity`}>
-                      <social.icon className="w-4 h-4" />
-                    </a>
-                  ))}
+              <h3 className="text-xl font-semibold mb-4">{t('footer.contactInfo')}</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <span className="font-medium">{t('footer.address')}:</span> {t('footer.addressValue')}
+                </li>
+                <li>
+                  <span className="font-medium">{t('footer.phone')}:</span> +880 1715-458036
+                </li>
+                <li>
+                  <span className="font-medium">{t('footer.email')}:</span>{" "}
+                  info@japanambition.com
+                </li>
+              </ul>
+
+              {/* Social Links */}
+              <div className="mt-4">
+                <h4 className="text-sm font-semibold mb-2">{t('footer.followUs')}</h4>
+                <div className="flex space-x-2">
+                  {socialLinks.map((link, index) => {
+                    const Icon = link.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={link.href}
+                        target={link.target || "_self"}
+                        className={`${link.color} p-2 rounded-full text-white hover:opacity-80 transition-opacity`}
+                      >
+                        <Icon size={16} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Copyright */}
-      </footer>
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 py-4">
-          <p className="text-center text-gray-400 text-sm">
-            Copyright © Japan Ambition Training Center 2025. All Rights Reserved
-          </p>
+          {/* Copyright */}
+          <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+            <p>{t('footer.copyright')}</p>
+          </div>
         </div>
-      </div>
+      </footer>
     </>
   );
 }

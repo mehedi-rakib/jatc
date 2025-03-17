@@ -1,4 +1,6 @@
+"use client";
 import { FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const iconMap = {
   phone: FaPhone,
@@ -8,6 +10,7 @@ const iconMap = {
 };
 
 export function ContactCard({ type, title, details }) {
+  const { t } = useTranslation();
   const Icon = iconMap[type];
 
   return (
@@ -17,13 +20,13 @@ export function ContactCard({ type, title, details }) {
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       {Array.isArray(details) ? (
-        details.map((detail, index) => (
-          <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2">
+          {details.map((detail, index) => (
             <p key={index} className="text-gray-600 text-sm">
               {detail}
             </p>
-          </div>
-        ))
+          ))}
+        </div>
       ) : (
         <p className="text-gray-600 text-sm">{details}</p>
       )}

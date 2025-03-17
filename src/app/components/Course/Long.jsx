@@ -1,7 +1,11 @@
+"use client";
 import { motion } from "framer-motion";
 import { FaAngleRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Long = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className=" py-12 px-6">
       <motion.div
@@ -10,73 +14,82 @@ const Long = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}>
         <h2 className="text-4xl font-bold text-red-600 mb-6">
-          Long Intensive Course
+          {t('pages.courses.long')}
         </h2>
         <p className="text-lg text-gray-700 mb-8">
-          The Long Intensive Japanese Course can help you master the Japanese
-          language in a very fast manner. This course focuses on speaking,
-          pronunciation, listening, reading and writing. The focus is on
-          improving your ability to communicate clearly and effectively. The
-          syllabus for your lessons is based on your course book, but your
-          teacher will also use other materials, including suggestions from
-          students so the content of the class is interesting and suit the
-          student's needs. You will work individually, in pairs or as a class.
-          Your teacher will correct your spoken and written errors so that you
-          will become more accurate and you will progress quickly. Each week,
-          you will be given homework to make sure you have sufficient amount of
-          extra knowledge. All Valiant students will understand their mistakes
-          and will gain the confidence to speak Japanese freely and naturally.
-          We have a diverse spectrum of enrolled students. Our students include:
-          business people, university students, corporate trainees, diplomats,
-          family members, working expats, teachers, spouses, and other adult
-          students of Japanese with various cultural backgrounds.
+          {t('courses.long.description')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Module 1 */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Introduction to Japanese
+              {t('courses.long.module1.title')}
             </h3>
             <p className="text-gray-600 mb-4">
-              A beginner-friendly introduction to the Japanese language,
-              focusing on basic grammar and vocabulary. You will be introduced
-              to essential phrases and essential Japanese customs.
+              {t('courses.long.module1.description')}
             </p>
             <div className="flex items-center text-red-600">
               <FaAngleRight />
-              <span className="ml-2">Start Course</span>
+              <span className="ml-2">{t('courses.startCourse')}</span>
             </div>
           </div>
 
           {/* Module 2 */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Intermediate Japanese
+              {t('courses.long.module2.title')}
             </h3>
             <p className="text-gray-600 mb-4">
-              Aimed at intermediate learners, this module dives into more
-              complex sentence structures, kanji, and conversation practice.
+              {t('courses.long.module2.description')}
             </p>
             <div className="flex items-center text-red-600">
               <FaAngleRight />
-              <span className="ml-2">Start Course</span>
+              <span className="ml-2">{t('courses.startCourse')}</span>
+            </div>
+          </div>
+
+          {/* Module 3 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-semibold text-green-600 mb-4">
+              {t('courses.long.module3.title')}
+            </h3>
+            <p className="text-gray-600 mb-4">
+              {t('courses.long.module3.description')}
+            </p>
+            <div className="flex items-center text-red-600">
+              <FaAngleRight />
+              <span className="ml-2">{t('courses.startCourse')}</span>
+            </div>
+          </div>
+
+          {/* Module 4 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-semibold text-green-600 mb-4">
+              {t('courses.long.module4.title')}
+            </h3>
+            <p className="text-gray-600 mb-4">
+              {t('courses.long.module4.description')}
+            </p>
+            <div className="flex items-center text-red-600">
+              <FaAngleRight />
+              <span className="ml-2">{t('courses.startCourse')}</span>
             </div>
           </div>
         </div>
 
         <div className="mt-12">
           <h3 className="text-2xl font-semibold text-green-600 mb-4">
-            What You Will Learn
+            {t('courses.features.title')}
           </h3>
           <ul className="text-gray-600">
-            <li className="mb-2">- Master Hiragana and Katakana</li>
-            <li className="mb-2">- Understand basic grammar patterns</li>
+            <li className="mb-2">- {t('courses.features.hiraganaKatakana')}</li>
+            <li className="mb-2">- {t('courses.features.basicGrammar')}</li>
             <li className="mb-2">
-              - Engage in simple conversations in Japanese
+              - {t('courses.features.simpleConversations')}
             </li>
             <li className="mb-2">
-              - Learn about Japanese culture and traditions
+              - {t('courses.features.culture')}
             </li>
           </ul>
         </div>
