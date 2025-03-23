@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar";
 import MenuHeader from "../Header/MenuHeader";
 import StructuredData from "../StructuredData";
-// import Preheader from "../Header/PreHeader";
+import Preheader from "../Header/PreHeader";
 
 // Import SplashScreen with no SSR to avoid hydration issues
 
@@ -41,8 +41,7 @@ const Layout = ({ children }) => {
   return (
     <div className="smooth-scroll-container">
       <StructuredData />
-      {/* <Preheader /> */}
-
+      <Preheader />
       <Navbar />
       {/* <MenuHeader /> */}
       <main className="min-h-screen">{children}</main>

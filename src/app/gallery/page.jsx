@@ -1,8 +1,10 @@
-import PhotoGallery from "../components/PhotoGallery";
+// import PhotoGallery from "../components/PhotoGallery";
+
+import Gallery from "../components/Gallery";
 
 const GalleryPage = () => {
     return ( <>
-    <PhotoGallery/></> );
+    <Gallery/></> );
 }
  
 export default GalleryPage;

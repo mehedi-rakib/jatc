@@ -10,7 +10,7 @@ export default function ContactSection() {
     {
       type: "phone",
       title: t('footer.phone'),
-      details: ["+880 1300-302099", "+880 1715-458036"],
+      details: ["+880 1300-302099", "+880 1715-458036","+880 1913727202"],
     },
     {
       type: "mail",

@@ -89,7 +89,7 @@
       "culture": "Learn about Japanese culture and traditions"
     },
     "long": {
-      "description": "The Long Intensive Japanese Course can help you master the Japanese language in a very fast manner. This course focuses on speaking, pronunciation, listening, reading and writing. The focus is on improving your ability to communicate clearly and effectively.",
+      "description": "N5 for student visa and N4 for SSW and job visa. This course focuses on speaking, pronunciation, listening, reading and writing. The focus is on improving your ability to communicate clearly and effectively.",
       "module1": {
         "title": "Introduction to Japanese",
         "description": "A beginner-friendly introduction to the Japanese language, focusing on basic grammar and vocabulary. You will be introduced to essential phrases and essential Japanese customs."
@@ -108,7 +108,7 @@
       }
     },
     "short": {
-      "description": "This short intensive course is designed for those who want to quickly learn essential Japanese phrases and vocabulary for travel or short-term use. It covers speaking, reading, and basic cultural awareness in a fun, interactive format.",
+      "description": "3 Months Basic Japanese Learning Course. It covers speaking, reading, and basic cultural awareness in a fun, interactive format.",
       "module1": {
         "title": "Survival Japanese",
         "description": "A crash course for travelers, teaching basic expressions and polite phrases for everyday situations like ordering food or asking for directions."
@@ -119,7 +119,7 @@
       }
     },
     "private": {
-      "description": "Take your Japanese learning experience to the next level with personalized lessons tailored to your individual needs and pace. Whether you are a beginner or looking to improve your conversation skills, private lessons will accelerate your learning.",
+      "description": "Take your Japanese learning experience to the next level with our flexible evening courses designed to fit your busy schedule. Whether you are a beginner or looking to improve your conversation skills, our evening classes offer structured learning in a group setting, helping you progress at a steady pace.",
       "module1": {
         "title": "Beginners Japanese",
         "description": "A one-on-one lesson designed for absolute beginners. Learn the basics, including pronunciation, simple sentences, and basic kanji."
@@ -185,9 +185,9 @@
     "home": "HOME",
     "about": "ABOUT",
     "course": "COURSE",
-    "longCourse": "Long Intensive Course",
-    "shortCourse": "Short Intensive Course",
-    "privateCourse": "Private Course",
+    "longCourse": "Long Course",
+    "shortCourse": "Short Course",
+    "privateCourse": "Evening Language Course",
     "notice": "NOTICE",
     "studentInfo": "STUDENT INFO",
     "studentResult": "Student Result",
@@ -199,7 +199,7 @@
     "jlptTest3": "JLPT Test 3",
     "jlptTest4": "JLPT Test 4",
     "news": "News",
-    "blog": "Blog",
+    "blog": "",
     "gallery": "Gallery",
     "contact": "Contact"
   },
@@ -210,8 +210,8 @@
     "blog": "Blog",
     "notice": "Notice",
     "admission": "Admission",
-    "links": "Links",
-    "contact": "Contact",
+    "links": "Links", 
+    "contact": "Contact Us",
     "openingHours": "Opening Hours",
     "sunday": "Sunday",
     "monday": "Monday",
@@ -266,9 +266,9 @@
       "title": "Contact Us"
     },
     "courses": {
-      "long": "Long Intensive Course",
-      "short": "Short Intensive Course",
-      "private": "Private Course"
+      "long": "Long Course",
+      "short": "Short Course",
+      "private": "Evening Language Course"
     }
   },
   "teacher": {

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "./Navbar";
 import Footer from "./Footer/Footer";
 import StructuredData from "./StructuredData";
+import Preheader from "./Header/PreHeader";
 
 export default function ClientLayout({ children }) {
   const { i18n } = useTranslation();
@@ -19,6 +20,7 @@ export default function ClientLayout({ children }) {
   return (
     <div className="smooth-scroll-container">
       <StructuredData />
+      <Preheader />
       <Navbar />
       <div className="relative w-full min-h-screen bg-[url('/bg.jpg')] bg-cover bg-center">
         {children}

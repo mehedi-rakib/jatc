@@ -3,18 +3,20 @@ import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
-    image: "/images/student/std-2.jpg",
-    name: "Mahabub Hossain",
+    image: "/images/student/roja.jpeg",
+    name: "Ariyana Azad Roja",
     content:
-      "The teaching method is amazing! I learned Japanese quickly and confidently. The instructors are knowledgeable and engaging. I highly recommend this course to anyone looking to learn Japanese.",
+      "The academy's guidance was instrumental in helping me achieve my academic goals in Japan.",
     rating: 5,
+    title:"Tokyo International University | Digital Business and Innovation.",
   },
   {
-    image: "/images/student/std-1.jpg",
-    name: "Abu Bakkar Siddique",
+    image: "/images/student/murad.jpeg",
+    name: "Md Murad Sarker",
     content:
-      "Great courses at an affordable price. Highly recommended for Japanese learners! I feel more fluent every day.",
+      "Great courses at an affordable price. Highly recommended for Japanese learners!",
     rating: 5,
+    title:"Student visa to Japan",
   },
 ];
 
@@ -33,6 +35,7 @@ export default function TestimonialsSection() {
             name={testimonial.name}
             content={testimonial.content}
             rating={testimonial.rating}
+            title={testimonial.title}
           />
         ))}
       </div>

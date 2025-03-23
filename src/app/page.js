@@ -7,6 +7,7 @@ import OnlineLearning from "./components/OnlineLearning";
 import PhotoGallery from "./components/PhotoGallery";
 import Teacher from "./components/Teacher";
 import TestimonialsSection from "./components/Testimonial/TestimonialsSection.jsx";
+import Services from "./components/Services";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ export default function Home() {
       <PhotoGallery />
       <Teacher />
       <TestimonialsSection />
+      <Services />
       <FooterTop />
     </>
   );

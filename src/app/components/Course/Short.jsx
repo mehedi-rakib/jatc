@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaAngleRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-const Short = () => {
+const   Short = () => {
   const { t } = useTranslation();
   
   return (

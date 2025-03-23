@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons-svg": "^4.4.2",
     "antd": "^5.22.7",
     "autoprefixer": "^10.4.20",
     "framer-motion": "^11.15.0",

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { AiOutlineLogin } from "react-icons/ai";
 import { Select } from "antd";
 import CustomMenu from "./Header/CustomMenu";
-import SearchButton from "./Header/SearchButton";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
@@ -55,29 +54,14 @@ const Navbar = () => {
                 {t('common.hotline')}
               </p>
             </div>
-            {/* <SearchButton /> */}
+          
             
             {/* Language Switcher */}
-            <div className="bg-red-500 hover:bg-red-600 rounded-md px-2 py-1">
+            <div className="rounded-md px-2 py-1">
               <LanguageSwitcher />
             </div>
           
-            <button
-              className="p-2 border-gradient-to-r border-2  text-white bg-green-400 hover:bg-red-500 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              aria-label={t('common.search')}>
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
+          
 
             <Link
               href="https://app.japanambition.com/login"
@@ -138,15 +122,10 @@ const Navbar = () => {
           <CustomMenu isMobile={true} onItemClick={closeMenu} />
           <div className="mt-4 space-y-2">
             {/* Language Switcher for Mobile */}
-            <div className="bg-red-500 hover:bg-red-600 rounded-md px-2 py-1 flex justify-center">
+            <div className=" rounded-md px-2 py-1 flex justify-left">
               <LanguageSwitcher />
             </div>
-            <button
-              className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-              aria-label={t('common.search')}
-              onClick={closeMenu}>
-              {t('common.search')}
-            </button>
+           
             <Link
               href="https://app.japanambition.com/login"
               className="bg-[#FFC107] flex items-center justify-center gap-2 font-semibold hover:bg-white hover:text-blue-600 text-black px-4 py-2 rounded-md text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"

@@ -19,7 +19,7 @@ export default function ContactForm() {
     <section className="py-16 px-4 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Form */}
-        <div className="bg-gray-50 p-8 rounded-lg border border-orange-200">
+        <div className=" p-8 rounded-lg border border-orange-200">
           <h2 className="text-2xl font-semibold mb-6">{t('contact.getInTouch')}</h2>
           <Form
             form={form}

@@ -2,7 +2,7 @@ import React from "react";
 import { Rate } from "antd";
 import { FaQuoteRight } from "react-icons/fa";
 
-export function TestimonialCard({ images, name, content, rating }) {
+export function TestimonialCard({ images, name, content, rating, title }) {
   // const images = "/images/student/std-1.jpg";
   return (
     <>
@@ -33,6 +33,7 @@ export function TestimonialCard({ images, name, content, rating }) {
 
         <div className="mb-2">
           <h3 className="text-white font-semibold text-lg">{name}</h3>
+          <p className="text-gray-300 text-sm italic">{title}</p>
         </div>
 
         {/* Quote Icon */}

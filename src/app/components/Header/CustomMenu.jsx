@@ -42,7 +42,6 @@ const CustomMenu = ({ isMobile, onItemClick }) => {
       ],
     },
     { label: t('menu.news'), key: "31", href: "/news" },
-    { label: t('menu.blog'), key: "32", href: "/blog" },
     { label: t('menu.gallery'), key: "gallery", href: "/gallery" },
     { label: t('menu.contact'), key: "45", href: "/contact-us" },
   ];

@@ -140,7 +140,7 @@ const BlogPost = () => {
               <div key={item} className="flex space-x-4">
                 <Avatar size={48} icon={<UserOutlined />} />
                 <div className="flex-1">
-                  <div className="bg-gray-50 p-4 rounded-lg">
+                  <div className=" p-4 rounded-lg">
                     <div className="flex justify-between">
                       <Text strong>Comment Author</Text>
                       <Text type="secondary">December 16, 2023</Text>
