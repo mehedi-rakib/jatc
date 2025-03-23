@@ -4,8 +4,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build && mv .next out",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
