@@ -292,5 +292,26 @@
   },
   "testimonials": {
     "title": "Words from Our Graduates"
-  }
+  },
+  "services": {
+    "titp": {
+      "title": "TITP (Technical Intern Training Program)",
+      "description": "Comprehensive support for Technical Intern Training Program applicants, including documentation preparation, training, and placement with Japanese companies."
+    },
+    "ssw": {
+      "title": "SSW (Specified Skilled Worker)",
+      "description": "End-to-end assistance for Specified Skilled Worker visa applications, helping qualified workers find opportunities in Japan's industries with labor shortages."
+    },
+    "studentVisa": {
+      "title": "Student Visa",
+      "description": "Complete guidance for international students seeking to study in Japan, from school selection and application to visa processing and pre-departure orientation."
+    },
+    "internationalJobVisa": {
+      "title": "International Job Visa",
+      "description": "Professional support for skilled workers looking to secure employment in Japan, including job matching, interview preparation, and visa application assistance."
+    }
+  },
+  "our": "Our",
+  "servicesTitle": "Services",
+  "servicesDescription": "We offer comprehensive support for various pathways to work and study in Japan."
 } 

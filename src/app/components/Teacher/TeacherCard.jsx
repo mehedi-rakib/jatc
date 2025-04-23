@@ -8,12 +8,12 @@ const TeacherCard = () => {
   const { t } = useTranslation();
   
   const teachers = [
-    {
-      id: 1,
-      name: t('teacher.names.abul', 'Md Abul Khair Bhuiyan'),
-      role: t('teacher.roles.chairman', 'Chairman'),
-      image: "/images/chairman.png"
-    },
+    // {
+    //   id: 1,
+    //   name: t('teacher.names.abul', 'Md Abul Khair Bhuiyan'),
+    //   role: t('teacher.roles.chairman', 'Chairman'),
+    //   image: "/images/chairman.png"
+    // },
     {
       id: 2,
       name: t('teacher.names.golam', 'Md Golam Kibria Bhuiyan'),
@@ -26,12 +26,12 @@ const TeacherCard = () => {
       role: t('teacher.roles.directorAdmin', 'Director of Administration'),
       image: "/images/baharul.png"
     },
-    {
-      id: 4,
-      name: t('teacher.names.salahuddin', 'Md Salahuddin'),
-      role: t('teacher.roles.directorAdmin', 'Director of Administration'),
-      image: "/images/salahuddin.png"
-    }
+    // {
+    //   id: 4,
+    //   name: t('teacher.names.salahuddin', 'Md Salahuddin'),
+    //   role: t('teacher.roles.directorAdmin', 'Director of Administration'),
+    //   image: "/images/salahuddin.png"
+    // }
   ];
 
   return (
@@ -40,8 +40,8 @@ const TeacherCard = () => {
         <Card
           key={teacher.id}
           hoverable
-          className="my-10 w-full"
-          cover={<img alt={teacher.name} src={teacher.image} />}>
+          className="my-10 w-full "
+          cover={<img alt={teacher.name} className="h-40 w-auto" src={teacher.image} />}>
           <Meta title={teacher.name} description={teacher.role} />
         </Card>
       ))}

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useTranslation } from "react-i18next";
 
 const ServiceCard = ({ title, description }) => {
   return (
@@ -13,22 +13,24 @@ const ServiceCard = ({ title, description }) => {
 };
 
 const Services = () => {
+  const { t } = useTranslation();
+
   const services = [
     {
-      title: "TITP (Technical Intern Training Program)",
-      description: "Comprehensive support for Technical Intern Training Program applicants, including documentation preparation, training, and placement with Japanese companies."
+      title: t("services.titp.title"),
+      description: t("services.titp.description")
     },
     {
-      title: "SSW (Specified Skilled Worker)",
-      description: "End-to-end assistance for Specified Skilled Worker visa applications, helping qualified workers find opportunities in Japan's industries with labor shortages."
+      title: t("services.ssw.title"),
+      description: t("services.ssw.description")
     },
     {
-      title: "Student Visa",
-      description: "Complete guidance for international students seeking to study in Japan, from school selection and application to visa processing and pre-departure orientation."
+      title: t("services.studentVisa.title"),
+      description: t("services.studentVisa.description")
     },
     {
-      title: "International Job Visa",
-      description: "Professional support for skilled workers looking to secure employment in Japan, including job matching, interview preparation, and visa application assistance."
+      title: t("services.internationalJobVisa.title"),
+      description: t("services.internationalJobVisa.description")
     }
   ];
 
@@ -37,11 +39,11 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            <span className="text-red-600">Our</span> <span className="text-green-600">Services</span>
+            <span className="text-red-600">{t("our")}</span> <span className="text-green-600">{t("servicesTitle")}</span>
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
           <p className="text-gray-700 max-w-2xl mx-auto text-lg">
-            We offer comprehensive support for various pathways to work and study in Japan.
+            {t("servicesDescription")}
           </p>
         </div>
         
