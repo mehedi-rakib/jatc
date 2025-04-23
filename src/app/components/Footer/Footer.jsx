@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="container w-3/4 mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12">
             {/* Logo and Description */}
-            <div className="space-y-4">
+            <div className="space-y-4 relative">
               <Link href="/#" className="inline-block">
                 <div className="relative w-48 h-16">
                   <img
@@ -55,6 +55,10 @@ export default function Footer() {
                   />
                 </div>
               </Link>
+              {/* Beta Version Tag */}
+              <span className="absolute top-6 left-1 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                {t('footer.betaVersion', 'Beta')}
+              </span>
               <p className="text-gray-300 text-sm">
                 {t('footer.description', 'Japan Ambition Training Center is a leading Japanese language school in Bangladesh, offering comprehensive language courses and cultural programs.')}
               </p>
@@ -131,8 +135,9 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+          <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm flex justify-between">
             <p>{t('footer.copyright')}</p>
+            <p className="mt-2">{t('footer.betaVersion', 'Beta Version')}</p>
           </div>
         </div>
       </footer>
