@@ -66,13 +66,23 @@
   "onlineLearning": {
     "title": "Japan Work or Study Opportunities",
     "description": "Explore the latest circulars for work or study opportunities in Japan.",
+    "tabs": {
+      "circulars": "Circulars",
+      "notices": "Notices"
+    },
     "circulars": {
-      "workOpportunity": "Work Opportunity in Japan",
-      "workOpportunityDesc": "Exciting job opportunities in Japan for skilled professionals. Apply now to start your career journey!",
+      "circular": {
+        "title": "Work Opportunity in Japan",
+        "description": "Exciting job opportunities in Japan for skilled professionals. Apply now to start your career journey!"
+      },
       "studyOpportunity": "Study Opportunity in Japan",
-      "studyOpportunityDesc": "Scholarships available for international students to study in Japan. Explore your academic potential!",
-      "languageProgram": "Japanese Language Program",
-      "languageProgramDesc": "Join our Japanese language program to enhance your skills and prepare for life in Japan."
+      "studyOpportunityDesc": "Scholarships available for international students to study in Japan. Explore your academic potential!"
+    },
+    "notices": {
+      "upcomingEvents": "Latest Events and Workshops",
+      "upcomingEventsDesc": "Join our upcoming workshops and seminars to enhance your skills and knowledge about Japan.",
+      "classSchedule": "Schedule Updates",
+      "classScheduleDesc": "Check our updated class schedules and important academic announcements."
     },
     "readMore": "Read more"
   }

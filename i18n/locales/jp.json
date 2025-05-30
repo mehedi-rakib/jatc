@@ -65,14 +65,24 @@
   },
   "onlineLearning": {
     "title": "日本での仕事または勉強の機会",
-    "description": "日本での仕事または勉強の最新のサーキュラーをご覧ください。",
+    "description": "日本での仕事や勉学の最新情報をご覧ください。",
+    "tabs": {
+      "circulars": "お知らせ",
+      "notices": "通知"
+    },
     "circulars": {
-      "workOpportunity": "日本での仕事の機会",
-      "workOpportunityDesc": "熟練した専門家のための日本でのエキサイティングな仕事の機会。今すぐ応募してキャリアをスタートしましょう！",
-      "studyOpportunity": "日本での勉強の機会",
-      "studyOpportunityDesc": "日本で勉強するための奨学金が国際学生に利用可能です。あなたの学問的可能性を探りましょう！",
-      "languageProgram": "日本語プログラム",
-      "languageProgramDesc": "スキルを向上させ、日本での生活に備えるために私たちの日本語プログラムに参加してください。"
+      "circular": {
+        "title": "日本での仕事の機会",
+        "description": "熟練した専門家のための日本での魅力的な仕事の機会。今すぐキャリアをスタート！"
+      },
+      "studyOpportunity": "日本での留学機会",
+      "studyOpportunityDesc": "留学生向けの奨学金制度があります。あなたの学問的可能性を広げましょう！"
+    },
+    "notices": {
+      "upcomingEvents": "最新イベントとワークショップ",
+      "upcomingEventsDesc": "日本についての知識とスキルを向上させるための、upcoming ワークショップやセミナーにご参加ください。",
+      "classSchedule": "スケジュール更新",
+      "classScheduleDesc": "最新の授業スケジュールと重要なお知らせをご確認ください。"
     },
     "readMore": "続きを読む"
   }
