@@ -62,5 +62,18 @@
       "required": "{{field}}を入力してください！",
       "select": "{{field}}を選択してください！"
     }
+  },
+  "onlineLearning": {
+    "title": "日本での仕事または勉強の機会",
+    "description": "日本での仕事または勉強の最新のサーキュラーをご覧ください。",
+    "circulars": {
+      "workOpportunity": "日本での仕事の機会",
+      "workOpportunityDesc": "熟練した専門家のための日本でのエキサイティングな仕事の機会。今すぐ応募してキャリアをスタートしましょう！",
+      "studyOpportunity": "日本での勉強の機会",
+      "studyOpportunityDesc": "日本で勉強するための奨学金が国際学生に利用可能です。あなたの学問的可能性を探りましょう！",
+      "languageProgram": "日本語プログラム",
+      "languageProgramDesc": "スキルを向上させ、日本での生活に備えるために私たちの日本語プログラムに参加してください。"
+    },
+    "readMore": "続きを読む"
   }
-} 
+}

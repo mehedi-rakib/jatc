@@ -47,6 +47,14 @@ const Navbar = () => {
       key: "3",
       label: <a href="./">{t('navbar.test3')}</a>,
     },
+    {
+      key: "4",
+      label: <a href="./">{t('navbar.test4')}</a>,
+    },
+    {
+      key: "5",
+      label: <a href="./">{t('navbar.test5')}</a>,
+    },
   ];
 
   return (

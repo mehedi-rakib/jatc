@@ -54,5 +54,18 @@ export default {
     mothersMobile: "MOTHER'S MOBILE NUMBER",
     mothersOccupation: "MOTHER'S OCCUPATION / PROFESSION",
     referralSource: "FROM WHAT MEDIUM DID YOU LEARN ABOUT US"
+  },
+  onlineLearning: {
+    title: "Japan Work or Study Opportunities",
+    description: "Explore the latest circulars for work or study opportunities in Japan.",
+    circulars: {
+      workOpportunity: "Work Opportunity in Japan",
+      workOpportunityDesc: "Exciting job opportunities in Japan for skilled professionals. Apply now to start your career journey!",
+      studyOpportunity: "Study Opportunity in Japan",
+      studyOpportunityDesc: "Scholarships available for international students to study in Japan. Explore your academic potential!",
+      languageProgram: "Japanese Language Program",
+      languageProgramDesc: "Join our Japanese language program to enhance your skills and prepare for life in Japan."
+    },
+    readMore: "Read more"
   }
-} 
+}

@@ -1,0 +1,24 @@
+.iframeWrapper {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.iframeWrapper iframe {
+  width: 100%;
+  height: calc(100% + 100px);  /* Add extra height to hide footer */
+  border: none;
+  margin-bottom: -100px;  /* Pull up to hide footer */
+  background: transparent !important;
+}
+
+/* Hide scrollbars but allow scrolling */
+.iframeWrapper iframe::-webkit-scrollbar {
+  display: none;
+}
+
+.iframeWrapper iframe {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

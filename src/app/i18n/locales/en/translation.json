@@ -6,7 +6,7 @@
     "bangla": "বাংলা",
     "login": "Login",
     "search": "Search",
-    "hotline": "Hot line: 01715-458036"
+    "hotline": "Hot line: 01325661767"
   },
   "hero": {
     "slide1": {
@@ -131,19 +131,48 @@
     }
   },
   "onlineLearning": {
-    "title": "Online Learning",
-    "description": "Access our Japanese language courses from anywhere in the world. Learn at your own pace with our comprehensive online curriculum.",
-    "features": {
-      "videoLessons": "HD Video Lessons",
-      "videoLessonsDesc": "Personalized Japanese courses with adaptive methods to support every learner's pace and confidence.",
-      "interactiveMaterials": "Interactive Learning Materials",
-      "interactiveMaterialsDesc": "Advanced training for top students, focusing on complex grammar, fluency, and exam preparation.",
-      "liveClasses": "Live Virtual Classes",
-      "liveClassesDesc": "A structured curriculum with balanced reading, writing, speaking, and listening for steady progress.",
-      "practiceExercises": "Practice Exercises & Quizzes"
+    "title": "Work or Study Opportunities",
+    "description": "Explore the latest circulars for work or study opportunities.",
+    "circulars": {
+      "workOpportunity": "Work Opportunity in Japan",
+      "workOpportunityDesc": "Exciting job opportunities in Japan for skilled professionals. Apply now to start your career journey!",
+      "studyOpportunity": "Study Opportunity in Japan",
+      "studyOpportunityDesc": "Scholarships available for international students to study in Japan. Explore your academic potential!",
+      "languageProgram": "Japanese Language Program",
+      "languageProgramDesc": "Join our Japanese language program to enhance your skills and prepare for life in Japan.",
+      "circular": {
+        "title": "Job Circular - Japanese Language Teacher",
+        "description": "Japan Ambition Training Center is hiring 1 Japanese Language Teacher. If you are proficient in Japanese language and interested in teaching - this opportunity is for you!",
+        "positions": "Number of Positions",
+        "positionCount": "1 person",
+        "qualifications": {
+          "title": "Qualifications",
+          "qual1": "Must pass NAT/JLPT (N4)",
+          "qual2": "N3 holders will be given priority",
+          "qual3": "Preference will be given to experienced candidates in related field",
+          "qual4": "SSW skill test pass holders will be given priority"
+        },
+        "salary": {
+          "title": "Salary",
+          "details": "Negotiable"
+        },
+        "workingHours": {
+          "title": "Working Hours",
+          "details": "Saturday to Thursday, 10:00 AM - 7:00 PM"
+        },
+        "contact": {
+          "title": "How to Apply",
+          "email": "Email",
+          "address": "Address",
+          "addressDetails": "A-61/4 (Ali Market), Khilkhet Bazar Road, Bottola, Dhaka-1229 (2nd Floor)",
+          "phone": "Contact",
+          "whatsapp": "WhatsApp available",
+          "callTime": "Call Time",
+          "callTimeDetails": "10:00 AM - 7:00 PM (Office closed on Friday)"
+        }
+      }
     },
-    "startLearning": "Start Learning",
-    "learnMore": "Learn More"
+    "readMore": "Read more"
   },
   "photoGallery": {
     "title": "Photo Gallery",
@@ -194,10 +223,11 @@
     "studentVerifyId": "Student Verify ID",
     "studentApply": "Student Apply",
     "jlptTest": "JLPT TEST",
-    "jlptTest1": "JLPT Test 1",
-    "jlptTest2": "JLPT Test 2",
-    "jlptTest3": "JLPT Test 3",
-    "jlptTest4": "JLPT Test 4",
+    "jlptTest1": "Test 1",
+    "jlptTest2": "Test 2",
+    "jlptTest3": "Test 3",
+    "jlptTest4": "Test 4",
+    "jlptTest5": "Test 5",
     "news": "News",
     "blog": "",
     "gallery": "Gallery",
@@ -314,4 +344,4 @@
   "our": "Our",
   "servicesTitle": "Services",
   "servicesDescription": "We offer comprehensive support for various pathways to work and study in Japan."
-} 
+}

@@ -11,7 +11,7 @@ const Teacher = () => {
         <h2 className="text-4xl font-bold md:pb-0 text-center">
           {t('teacher.ourManagement', 'Our Management')}
         </h2>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-24 items-center justify-center">
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 items-center justify-center">
           {/* ImgSrc, MTitle, MDesc */}
           <TeacherCard
           // MTitle="Mohammad Golam Kibria Bhuiyan"

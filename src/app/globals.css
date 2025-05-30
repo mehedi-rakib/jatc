@@ -28,6 +28,7 @@ body {
   overscroll-behavior-y: contain; /* Prevents bounce effect on some mobile browsers */
   touch-action: manipulation; /* Improves touch responsiveness */
 }
+
 text {
   color: var(--foreground);
 }

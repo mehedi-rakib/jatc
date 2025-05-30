@@ -39,6 +39,7 @@ const CustomMenu = ({ isMobile, onItemClick }) => {
         { label: t('menu.jlptTest2'), key: "9", href: "/test/2" },
         { label: t('menu.jlptTest3'), key: "10", href: "/test/3" },
         { label: t('menu.jlptTest4'), key: "20", href: "/test/4" },
+        { label: t('menu.jlptTest5'), key: "20", href: "/test/5" },
       ],
     },
     { label: t('menu.news'), key: "31", href: "/news" },

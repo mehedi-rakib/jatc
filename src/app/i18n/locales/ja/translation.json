@@ -131,19 +131,49 @@
     }
   },
   "onlineLearning": {
-    "title": "オンライン学習",
-    "description": "世界中どこからでも日本語コースにアクセスできます。包括的なオンラインカリキュラムで自分のペースで学びましょう。",
-    "features": {
-      "videoLessons": "HD ビデオレッスン",
-      "videoLessonsDesc": "学習者のペースと自信をサポートする適応型メソッドを備えたパーソナライズされた日本語コース。",
-      "interactiveMaterials": "インタラクティブな学習教材",
-      "interactiveMaterialsDesc": "複雑な文法、流暢さ、試験準備に焦点を当てた上級学生向けの高度なトレーニング。",
-      "liveClasses": "ライブ仮想クラス",
-      "liveClassesDesc": "読み書き、会話、リスニングのバランスが取れた構造化されたカリキュラムで着実に進歩します。",
-      "practiceExercises": "練習問題とクイズ"
+    "title": "「仕事または勉強の機会」",
+    "description": "日本での仕事または勉強の最新のサーキュラーをご覧ください。",
+    "circulars": {
+      "workOpportunity": "日本での仕事の機会",
+      "workOpportunityDesc": "熟練した専門家のための日本でのエキサイティングな仕事の機会。今すぐ応募してキャリアをスタートしましょう！",
+      "studyOpportunity": "日本での勉強の機会",
+      "studyOpportunityDesc": "日本で勉強するための奨学金が国際学生に利用可能です。あなたの学問的可能性を探りましょう！",
+      "languageProgram": "日本語プログラム",
+      "languageProgramDesc": "スキルを向上させ、日本での生活に備えるために私たちの日本語プログラムに参加してください。",
+      "circular": {
+        "title": "求人案内 - 日本語教師",
+        "description": "ジャパンアンビション研修センターでは、日本語教師1名を募集しています。日本語が堪能で、教えることに興味のある方 - このチャンスをお見逃しなく！",
+        "positions": "募集人数",
+        "positionCount": "1名",
+        "qualifications": {
+          "title": "応募資格",
+          "qual1": "NAT/JLPT（N4）合格必須",
+          "qual2": "N3保持者優遇",
+          "qual3": "関連分野での経験者優遇",
+          "qual4": "SSWスキルテスト合格者優遇"
+        },
+        "salary": {
+          "title": "給与",
+          "details": "応相談"
+        },
+        "workingHours": {
+          "title": "勤務時間",
+          "details": "土曜日〜木曜日、午前10時〜午後7時"
+        },
+        "contact": {
+          "title": "応募方法",
+          "email": "メールアドレス",
+          "address": "住所",
+          "addressDetails": "A-61/4（アリマーケット）、キルケットバザールロード、ボットラ、ダッカ-1229（2階）",
+          "phone": "連絡先",
+          "whatsapp": "WhatsAppで連絡可能",
+          "callTime": "受付時間",
+          "callTimeDetails": "午前10時〜午後7時（金曜日は休業）"
+        }
+      }
     },
-    "startLearning": "学習を始める",
-    "learnMore": "詳細を見る"
+
+    "readMore": "続きを読む"
   },
   "photoGallery": {
     "title": "フォトギャラリー",
@@ -198,6 +228,7 @@
     "jlptTest2": "JLPT試験2",
     "jlptTest3": "JLPT試験3",
     "jlptTest4": "JLPT試験4",
+    "jlptTest5": "JLPT試験5",
     "news": "ニュース",
     "blog": "ブログ",
     "gallery": "ギャラリー",
@@ -314,4 +345,4 @@
   "our": "私たちの",
   "servicesTitle": "サービス",
   "servicesDescription": "日本で働き、学ぶためのさまざまな道筋を包括的にサポートします。"
-} 
+}
