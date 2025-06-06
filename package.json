@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
-    "start": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+  "build": "next build && next export",
+  "export": "next export",
+  "start": "serve -s out",
+  "lint": "next lint"
   },
   "dependencies": {
     "@ant-design/icons-svg": "^4.4.2",
