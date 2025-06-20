@@ -107,7 +107,7 @@ export default function Footer() {
                   <span className="font-medium">{t('footer.phone')}:</span> +880 1715-458036
                 </li>
                 <li>
-                  <span className="font-medium">{t('')}:</span>{"     "} +880 1325-661767
+                  <span className="font-medium text-[#1E2832]">{t('footer.phone')}:</span> +880 1325-661767
                 </li>
                 <li>
                   <span className="font-medium">{t('footer.email')}:</span>{" "}

@@ -76,7 +76,7 @@ export default function Header() {
            
             
             <Link
-              href="https://app.japanambition.com/login"
+              href="https://dev.japanambition.com/login"
               className="bg-[#FFC107] hover:bg-[#FFA000] text-black px-4 py-2 rounded-md text-sm font-medium transition-colors">
               Login/Register
             </Link>
@@ -129,7 +129,7 @@ export default function Header() {
                
                
                 <Link
-                  href="https://app.japanambition.com/login"
+                  href="https://dev.japanambition.com/login"
                   className="block w-full bg-[#FFC107] hover:bg-[#FFA000] text-black px-4 py-2 rounded-md text-sm font-medium text-center transition-colors"
                   onClick={() => setIsMenuOpen(false)}>
                   Login/Register
