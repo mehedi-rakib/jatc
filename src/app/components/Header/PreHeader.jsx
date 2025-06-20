@@ -10,11 +10,9 @@ const Preheader = () => {
               href="/"
               className=" flex items-center space-x-2 text-white text-sm md:text-lg font-bold hover:text-yellow-200 transition-colors"
             >
-              <span>🎉</span>
+              <span>🎓</span>
               <span>
-                  ঈদ মোবারক! | জাপান অ্যাম্বিশন ট্রেনিং সেন্টারের পক্ষ থেকে আপনাকে ও
-                  আপনার পরিবারকে জানাই পবিত্র ঈদুল আজহার শুভেচ্ছা। সুখ, শান্তি ও
-                  সমৃদ্ধিতে কাটুক আপনার ঈদ! 🌙
+                  ভর্তি চলিতেছে! জাপান এম্বিশন ট্রেনিং সেন্টারে ৬ মাস মেয়াদী N4 ও N5 কোর্সে ভর্তি চলমান। আগ্রহীদের দ্রুত যোগাযোগ করার জন্য অনুরোধ করা হচ্ছে।
               </span>
             </Link>
           )}
