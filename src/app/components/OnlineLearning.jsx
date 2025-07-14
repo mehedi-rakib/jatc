@@ -16,7 +16,7 @@ export default function OnlineLearning() {
     {
       title: t("onlineLearning.circulars.circular.title"),
       description: t("onlineLearning.circulars.circular.description"),
-      link: "/notice/circular-1",
+      link: "/notice/circular-1.html",
     },
   ];
 
