@@ -7,15 +7,16 @@ export default function OnlineLearning() {
 
   // Static data for circulars
   const circulars = [
+
+    {
+      title: t("onlineLearning.circulars.studyOpportunity"),
+      description: t("onlineLearning.circulars.studyOpportunityDesc"),
+      link: "/upload/jp_jobs.gif",
+    },
     {
       title: t("onlineLearning.circulars.circular.title"),
       description: t("onlineLearning.circulars.circular.description"),
       link: "/notice/circular-1",
-    },
-    {
-      title: t("onlineLearning.circulars.studyOpportunity"),
-      description: t("onlineLearning.circulars.studyOpportunityDesc"),
-      link: "#",
     },
   ];
 
@@ -24,12 +25,12 @@ export default function OnlineLearning() {
     {
       title: "Latest Events and Workshops",
       description: "Join our upcoming workshops and seminars to enhance your skills and knowledge about Japan.",
-      link: "/notice/notice-1",
+      link: "#",
     },
     {
       title: "Schedule Updates",
       description: "Check our updated class schedules and important academic announcements.",
-      link: "/notice/notice-2",
+      link: "#",
     },
   ];
 
