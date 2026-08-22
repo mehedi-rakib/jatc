@@ -4,7 +4,7 @@ import { Card, Typography, Row, Col } from "antd";
 
 const { Title, Paragraph } = Typography;
 
-export const Instructor = () => {
+const Instructor = () => {
   return (
     <div className="p-4 max-w-5xl mx-auto">
       {/* Header Section */}
@@ -94,4 +94,6 @@ export const Instructor = () => {
     </div>
   );
 };
+
+export default Instructor;
 
