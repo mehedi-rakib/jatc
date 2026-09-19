@@ -2,43 +2,264 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   Design tokens
+   ============================================================ */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a2540;
+  --surface: #f6f8fb;
+  --muted: #5b6b7f;
+  --border: #e4eaf2;
+
+  --brand: #e31e24;
+  --brand-dark: #c8161d;
+  --navy: #003b6d;
+  --amber: #ffc107;
+  --cyan: #41c5e5;
+
+  --header-h: 72px;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: #ffffff;
+@layer base {
+  * {
+    @apply border-[color:var(--border)];
   }
-} */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  background-image: image("bg.jpg");
-  /* font-family: Lato, Helvetica, sans-serif; */
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+    -webkit-tap-highlight-color: transparent;
+    /* `clip` rather than `hidden`: hidden on html/body would break the
+       sticky header. This contains the off-screen entry offsets used by
+       the scroll-reveal animations. */
+    overflow-x: clip;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-ink-900;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, consistent keyboard focus everywhere */
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Branded selection */
+  ::selection {
+    background: var(--brand);
+    color: #fff;
+  }
+
+  /* Slim, on-brand scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--surface);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c3cfdd;
+    border-radius: 999px;
+    border: 2px solid var(--surface);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand);
+  }
 }
-text {
-  color: var(--foreground);
+
+/* ============================================================
+   Reusable components
+   ============================================================ */
+@layer components {
+  /* --- Buttons --- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
+           text-sm font-semibold tracking-wide transition-all duration-300
+           ease-smooth active:scale-[0.97] disabled:opacity-60
+           disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white shadow-soft
+           hover:bg-brand-600 hover:shadow-lift hover:-translate-y-0.5;
+  }
+  .btn-navy {
+    @apply btn bg-ink-700 text-white shadow-soft
+           hover:bg-ink-800 hover:shadow-lift hover:-translate-y-0.5;
+  }
+  .btn-amber {
+    @apply btn bg-sun-500 text-ink-900 shadow-soft
+           hover:bg-sun-600 hover:shadow-lift hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply btn border-2 border-white/70 text-white backdrop-blur-sm
+           hover:bg-white hover:text-ink-900 hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply btn border-2 border-ink-200 text-ink-700
+           hover:border-brand-500 hover:text-brand-500 hover:-translate-y-0.5;
+  }
+
+  /* --- Cards --- */
+  .card {
+    @apply rounded-2xl bg-white shadow-soft transition-all duration-300
+           ease-smooth;
+  }
+  .card-hover {
+    @apply card hover:-translate-y-1.5 hover:shadow-lift;
+  }
+
+  /* --- Section headings --- */
+  .section {
+    @apply py-14 md:py-20;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5
+           text-xs font-bold uppercase tracking-[0.18em] text-brand-600;
+  }
+  .heading {
+    @apply font-display text-3xl font-extrabold leading-tight md:text-4xl
+           lg:text-[2.75rem];
+  }
+  .subheading {
+    @apply mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]
+           md:text-lg;
+  }
+
+  /* Animated underline that sweeps in on hover */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-[2px] w-0 rounded-full bg-brand-500
+           transition-all duration-300 ease-smooth;
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply w-full;
+  }
+
+  /* Glass surface for overlays */
+  .glass {
+    background: rgb(255 255 255 / 0.72);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+  }
+
+  /* Skeleton shimmer for loading states */
+  .skeleton {
+    @apply relative overflow-hidden rounded-xl bg-ink-100;
+  }
+  .skeleton::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r
+           from-transparent via-white/70 to-transparent;
+  }
 }
-.nav-item {
-  padding: 8px;
-  border-radius: 15%;
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-500 via-brand-600 to-ink-700
+           bg-clip-text text-transparent;
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* Soft top/bottom edge fade for scroll areas */
+  .mask-fade-x {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 6%,
+      #000 94%,
+      transparent
+    );
+  }
+
+  .nav-item {
+    padding: 8px;
+    border-radius: 10px;
+    transition: background-color 0.25s var(--ease-smooth),
+      color 0.25s var(--ease-smooth);
+  }
+  .nav-item:hover {
+    text-decoration: none;
+    background-color: #fff;
+  }
 }
-.nav-item:hover {
-  text-decoration: none;
-  background-color: white;
+
+/* ============================================================
+   Ant Design bridging — keep antd widgets on-brand
+   ============================================================ */
+.ant-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-smooth),
+    box-shadow 0.35s var(--ease-smooth) !important;
 }
- @keyframes marquee {
-     0% { transform: translateX(100vw); }
-     100% { transform: translateX(-100%); }
-   }
-   .animate-marquee {
-     display: inline-block;
-     white-space: nowrap;
-     animation: marquee 40s linear infinite;
-     will-change: transform;
-   }
+.ant-card-hoverable:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px -8px rgb(10 37 64 / 0.18),
+    0 22px 48px -22px rgb(10 37 64 / 0.26) !important;
+}
+.ant-btn {
+  border-radius: 999px !important;
+  font-weight: 600;
+}
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select-selector,
+.ant-picker {
+  border-radius: 10px !important;
+}
+
+/* ============================================================
+   Accessibility: honour reduced-motion preferences
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

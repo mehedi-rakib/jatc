@@ -1,29 +1,35 @@
-"use client";
-import { useParams } from "next/navigation";
-import Test1 from "src/app/components/Test/Test1";
-import Test2 from "src/app/components/Test/Test2";
-import Test3 from "src/app/components/Test/Test3";
-import Test4 from "src/app/components/Test/Test4";
+import { notFound } from "next/navigation";
+import Quiz from "../../components/Test/Quiz";
+import { jlptTests, testIds } from "../../data/jlptTests";
 
-const TestPage = () => {
-  const params = useParams();
-  const id = params?.id || "";
-  const Test = () => {
-    switch (id) {
-      case "1":
-        return <Test1 />;
-      case "2":
-        return <Test2 />;
-      case "3":
-        return <Test3 />;
-      case "4":
-        return <Test4 />;
+export function generateStaticParams() {
+  return testIds.map((id) => ({ id }));
+}
 
-      default:
-        return <h1>Loading.....</h1>;
-    }
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const test = jlptTests[id];
+  if (!test) return { title: "Test Not Found" };
+
+  return {
+    title: test.title,
+    description: `${test.level} practice — ${test.description}`,
   };
-  return <div>{Test()}</div>;
-};
+}
 
-export default TestPage;
+export default async function TestPage({ params }) {
+  const { id } = await params;
+  const test = jlptTests[id];
+
+  if (!test) notFound();
+
+  return (
+    <Quiz
+      testId={id}
+      title={test.title}
+      level={test.level}
+      description={test.description}
+      questions={test.questions}
+    />
+  );
+}

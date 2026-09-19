@@ -1,9 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaChevronDown, FaRegCalendarAlt } from "react-icons/fa";
+import PageHero from "./ui/PageHero";
+import { typeStyles } from "../data/notices";
 
-const notices = [
+const newsItems = [
   {
     id: 1,
     type: "Important",
@@ -34,59 +37,140 @@ const notices = [
     title: "Scholarship Application Due",
     date: "2023-12-01",
     content:
-      "Reminder: The deadline for submitting scholarship applications is December 31st. Dont miss this opportunity!",
+      "Reminder: The deadline for submitting scholarship applications is December 31st. Don't miss this opportunity!",
   },
 ];
 
-const typeColors = {
-  Important: "bg-red-100 text-red-800",
-  Academic: "bg-blue-100 text-blue-800",
-  Event: "bg-green-100 text-green-800",
-  Deadline: "bg-yellow-100 text-yellow-800",
-};
+const filters = ["All", "Important", "Academic", "Event", "Deadline"];
+
+const formatDate = (iso) =>
+  new Date(iso).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 
 export default function News() {
-  const [expandedNotice, setExpandedNotice] = useState(null);
+  const [filter, setFilter] = useState("All");
+  const [expanded, setExpanded] = useState(newsItems[0]?.id ?? null);
+
+  const visible =
+    filter === "All"
+      ? newsItems
+      : newsItems.filter((item) => item.type === filter);
 
   return (
-    <section className="py-16 px-4 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8 text-center">Importent News</h1>
-      <div className="space-y-4">
-        {notices.map((notice) => (
-          <motion.div
-            key={notice.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}>
-            <div
-              className="p-4 cursor-pointer"
-              onClick={() =>
-                setExpandedNotice(
-                  expandedNotice === notice.id ? null : notice.id
-                )
-              }>
-              <div className="flex justify-between items-center mb-2">
-                <span
-                  className={`text-sm font-semibold px-2 py-1 rounded ${
-                    typeColors[notice.type]
-                  }`}>
-                  {notice.type}
-                </span>
-                <span className="text-sm text-gray-500">{notice.date}</span>
-              </div>
-              <h2 className="text-xl font-semibold mb-2">{notice.title}</h2>
-              <motion.div
-                initial={false}
-                animate={{ height: expandedNotice === notice.id ? "auto" : 0 }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden">
-                <p className="text-gray-600">{notice.content}</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+    <>
+      <PageHero
+        eyebrow="Updates"
+        title="Important News"
+        description="Everything happening at the center — closures, deadlines, events and academic updates."
+        breadcrumbs={[{ label: "News" }]}
+      />
+
+      <section className="section mx-auto max-w-4xl px-6">
+        {/* Filter pills */}
+        <div className="mb-8 flex flex-wrap justify-center gap-2">
+          {filters.map((option) => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => setFilter(option)}
+              className={`relative rounded-full px-4 py-2 text-xs font-bold uppercase
+                          tracking-wider transition-colors duration-300 ${
+                            filter === option
+                              ? "text-white"
+                              : "text-ink-600 hover:text-brand-500"
+                          }`}>
+              {filter === option && (
+                <motion.span
+                  layoutId="news-filter"
+                  className="absolute inset-0 rounded-full bg-brand-500"
+                  transition={{ type: "spring", stiffness: 360, damping: 30 }}
+                />
+              )}
+              <span className="relative">{option}</span>
+            </button>
+          ))}
+        </div>
+
+        <motion.div layout className="space-y-4">
+          <AnimatePresence mode="popLayout">
+            {visible.map((item) => {
+              const open = expanded === item.id;
+
+              return (
+                <motion.article
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className={`overflow-hidden rounded-2xl bg-white shadow-soft ring-1
+                              transition-shadow duration-300 hover:shadow-lift ${
+                                open ? "ring-brand-200" : "ring-ink-100"
+                              }`}>
+                  <button
+                    type="button"
+                    onClick={() => setExpanded(open ? null : item.id)}
+                    aria-expanded={open}
+                    className="flex w-full items-start gap-4 p-5 text-left md:p-6">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span
+                          className={`rounded-full px-3 py-1 text-[11px] font-bold uppercase
+                                      tracking-wider ring-1 ${
+                                        typeStyles[item.type] ??
+                                        "bg-ink-50 text-ink-700 ring-ink-100"
+                                      }`}>
+                          {item.type}
+                        </span>
+                        <span className="flex items-center gap-1.5 text-xs text-[color:var(--muted)]">
+                          <FaRegCalendarAlt className="h-3 w-3" />
+                          {formatDate(item.date)}
+                        </span>
+                      </div>
+                      <h2 className="mt-3 text-lg font-bold text-ink-900 md:text-xl">
+                        {item.title}
+                      </h2>
+                    </div>
+
+                    <span
+                      className={`mt-1 grid h-8 w-8 shrink-0 place-items-center rounded-full
+                                  bg-ink-50 text-ink-600 transition-all duration-300 ${
+                                    open ? "rotate-180 bg-brand-500 text-white" : ""
+                                  }`}>
+                      <FaChevronDown className="h-3 w-3" />
+                    </span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden">
+                        <p className="border-t border-ink-100 px-5 py-5 text-sm leading-relaxed text-[color:var(--muted)] md:px-6">
+                          {item.content}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.article>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
+
+        {visible.length === 0 && (
+          <p className="py-12 text-center text-[color:var(--muted)]">
+            No {filter.toLowerCase()} items right now.
+          </p>
+        )}
+      </section>
+    </>
   );
 }

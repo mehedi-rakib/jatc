@@ -1,6 +1,11 @@
 import NoticeBoard from "../components/NoticeBoard";
-const NoticePage = () => {
-  return <NoticeBoard />;
+
+export const metadata = {
+  title: "Notice Board",
+  description:
+    "Admission dates, seminars and important announcements from Japan Ambition Training Center.",
 };
 
-export default NoticePage;
+export default function NoticePage() {
+  return <NoticeBoard />;
+}

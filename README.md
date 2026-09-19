@@ -1,40 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Japan Ambition Training Center
 
-## Getting Started
+Frontend for Japan Ambition Training Center — a Japanese language institute in
+Khilkhet, Dhaka. Built with Next.js (App Router), Tailwind CSS, Ant Design and
+Framer Motion.
 
-First, run the development server:
+## Requirements
+
+- Node.js 20+
+- npm
+
+## Running the site
+
+Everything runs on **port 2002**.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+
+# development (hot reload)
+npm run dev          # http://localhost:2002
+
+# production
+npm run build
+npm start            # http://localhost:2002
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run production on a different port, override it directly:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npx next start -p 3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Lint with `npm run lint`.
 
-## Learn More
+### Deploying behind a process manager
 
-To learn more about Next.js, take a look at the following resources:
+`npm start` runs `next start -p 2002`. With PM2, for example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+pm2 start npm --name jatc -- start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Put Nginx (or similar) in front to terminate TLS and proxy to `127.0.0.1:2002`.
 
-## Deploy on Vercel
+## Project layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/app/
+├── layout.js              # fonts, metadata, providers, global chrome
+├── providers.jsx          # Ant Design SSR registry + brand theme tokens
+├── globals.css            # design tokens, button/card/heading primitives
+├── page.js                # home page composition
+├── data/                  # notices, blog posts, JLPT question banks
+└── components/
+    ├── motion/            # Reveal, Stagger, CountUp — animation primitives
+    ├── ui/                # PageHero, SectionHeading, BackToTop, …
+    ├── Header/            # navigation data, desktop menu, mobile drawer, search
+    └── …                  # page sections
+```
 
-# Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Conventions
 
-# jlcb-frontend
+- **Navigation** lives in `src/app/components/Header/navigation.js`. Add a page
+  there and it appears in the desktop menu, the mobile drawer and the search
+  overlay at once.
+- **Animations** use the primitives in `components/motion/`. They all respect
+  `prefers-reduced-motion`.
+- **Brand colours** are Tailwind tokens (`brand`, `ink`, `sun`, `sky`) defined in
+  `tailwind.config.js` and mirrored into Ant Design via `providers.jsx`.
+- **Images** in `public/` are compressed to max 2400px wide. Keep new uploads
+  under ~500 KB — the source photos were originally 5–14 MB each.
 
-Japanese Language School Bangladesh Frontend project
+## Known gaps
+
+- The contact form and newsletter have no backend. The contact form opens the
+  visitor's mail client; the newsletter only acknowledges locally.
+- Student results and ID verification read from demo objects in
+  `components/Student/`, not a real API.
+- Blog posts are placeholder content in `src/app/data/blogPosts.js`.

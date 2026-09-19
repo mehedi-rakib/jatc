@@ -1,7 +1,11 @@
 import StudentRegistrationForm from "../components/Student/StudentRegistrationForm";
 
-const StudentRegForm = () => {
-  return <StudentRegistrationForm />;
+export const metadata = {
+  title: "Apply for Admission",
+  description:
+    "Apply online for a Japanese language course at Japan Ambition Training Center — four short steps.",
 };
 
-export default StudentRegForm;
+export default function StudentApplyPage() {
+  return <StudentRegistrationForm />;
+}

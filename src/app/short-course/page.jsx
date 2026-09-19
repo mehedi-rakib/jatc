@@ -1,8 +1,11 @@
-'use client';
 import Short from "../components/Course/Short";
 
-const ShortCourse = () => {
-    return ( <Short /> );
+export const metadata = {
+  title: "Short Intensive Course",
+  description:
+    "Fast-track essential Japanese for travel, work or interviews with our Short Intensive Course.",
+};
+
+export default function ShortCoursePage() {
+  return <Short />;
 }
- 
-export default ShortCourse;

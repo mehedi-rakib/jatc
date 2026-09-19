@@ -1,6 +1,11 @@
 import BlogPage from "../components/Blog/BlogPage";
-const Blog = () => {
-  return <BlogPage />;
+
+export const metadata = {
+  title: "Blog",
+  description:
+    "Study tips, language guides and news from Japan Ambition Training Center.",
 };
 
-export default Blog;
+export default function Blog() {
+  return <BlogPage />;
+}

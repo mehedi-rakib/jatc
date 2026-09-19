@@ -1,60 +1,46 @@
-import { motion } from "framer-motion";
-import { FaAngleRight } from "react-icons/fa";
+import CourseTemplate from "./CourseTemplate";
 
-const PrivateLessons = () => {
+export default function PrivateLessons() {
   return (
-    <div className=" py-12 px-6">
-      <motion.div
-        className="max-w-4xl mx-auto text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}>
-        <h2 className="text-4xl font-bold text-red-600 mb-6">
-          Private Lessons
-        </h2>
-        <p className="text-lg text-gray-700 mb-8">
-          Take your Japanese learning experience to the next level with
-          personalized lessons tailored to your individual needs and pace.
-          Whether you are a beginner or looking to improve your conversation
-          skills, private lessons will accelerate your learning.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Module 1 */}
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Beginners Japanese
-            </h3>
-            <p className="text-gray-600 mb-4">
-              A one-on-one lesson designed for absolute beginners. Learn the
-              basics, including pronunciation, simple sentences, and basic
-              kanji.
-            </p>
-            <div className="flex items-center text-red-600">
-              <FaAngleRight />
-              <span className="ml-2">Start Lesson</span>
-            </div>
-          </div>
-
-          {/* Module 2 */}
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Advanced Japanese Conversation
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Improve your speaking skills with private lessons focused on
-              advanced topics like debates, current events, and business
-              Japanese.
-            </p>
-            <div className="flex items-center text-red-600">
-              <FaAngleRight />
-              <span className="ml-2">Start Lesson</span>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
+    <CourseTemplate
+      eyebrow="One-to-One"
+      title="Private Lessons"
+      image="/images/slider-4.jpg"
+      breadcrumbs={[{ label: "Courses" }, { label: "Private Course" }]}
+      intro="Personalised lessons shaped entirely around your goals, your schedule and the pace that works for you."
+      facts={[
+        { label: "Duration", value: "Flexible" },
+        { label: "Level", value: "Any level" },
+        { label: "Schedule", value: "You choose" },
+        { label: "Format", value: "One-to-one" },
+      ]}
+      body="Take your Japanese to the next level with lessons tailored to your individual needs and pace. Whether you are an absolute beginner or polishing your conversation skills, private lessons accelerate your progress — because every minute of class time is spent on exactly what you need. You set the hours, and your instructor builds the syllabus around your goals."
+      modules={[
+        {
+          title: "Beginner's Japanese",
+          body: "One-to-one lessons designed for absolute beginners: pronunciation, simple sentences and your first kanji.",
+        },
+        {
+          title: "Advanced Conversation",
+          body: "Sharpen your speaking with sessions built around debates, current events and business Japanese.",
+        },
+        {
+          title: "JLPT Coaching",
+          body: "Targeted preparation for the level you are sitting, with practice papers marked and reviewed with you.",
+        },
+        {
+          title: "Interview & Job Prep",
+          body: "Rehearse the exact conversations you will face when applying to work or study in Japan.",
+        },
+      ]}
+      outcomes={[
+        "A syllabus built around your goals",
+        "Lessons at times that suit you",
+        "Immediate, personal feedback",
+        "Faster progress than group classes",
+        "Focused JLPT or interview coaching",
+        "Confidence speaking one-to-one",
+      ]}
+    />
   );
-};
-
-export default PrivateLessons;
+}

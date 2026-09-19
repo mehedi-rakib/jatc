@@ -1,48 +1,62 @@
-import React from "react";
+"use client";
+
 import Image from "next/image";
 import { Rate } from "antd";
+import { motion } from "framer-motion";
 import { FaQuoteRight } from "react-icons/fa";
 
-export function TestimonialCard({ images, name, content, rating }) {
-  // const images = "/images/student/std-1.jpg";
+export function TestimonialCard({ images, name, role, content, rating, delay = 0 }) {
   return (
-    <>
-      {/* Profile Image */}
-      {/* <div className="relative -top-8 left-1/2 transform -translate-x-1/2">
-        <Image src={images} alt="Profile" width={80} height={80} />
-      </div> */}
-
-      {/* Card Content */}
-
-      <div className="bg-[#464B5F] rounded-lg p-6 md:p-6 md:pt-14 text-center relative">
-        <div className="mb-4 ">
+    <motion.figure
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6 }}
+      className="group relative flex h-full flex-col rounded-3xl bg-white p-7
+                 pt-14 text-center shadow-soft ring-1 ring-ink-100
+                 transition-shadow duration-300 hover:shadow-lift">
+      {/* Avatar overlapping the top edge */}
+      <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+        <div
+          className="relative h-20 w-20 overflow-hidden rounded-full ring-4 ring-white
+                     shadow-lift transition-transform duration-300 ease-spring
+                     group-hover:scale-110">
           <Image
             src={images}
-            alt="Profile"
-            width={100}
-            height={100}
-            className="xl:-mt-20 xl:ml-52 mx-auto rounded-full xl:absolute"
+            alt={name}
+            fill
+            sizes="80px"
+            className="object-cover"
           />
-          <Rate
-            disabled
-            defaultValue={rating}
-            className="text-yellow-400 mt-6"
-          />
-        </div>
-
-        <p className="text-gray-300 mb-6 text-sm italic">{content}</p>
-
-        <div className="mb-2">
-          <h3 className="text-white font-semibold text-lg">{name}</h3>
-        </div>
-
-        {/* Quote Icon */}
-        <div className="absolute -bottom-4 right-4">
-          <div className="bg-red-500 rounded-full p-2">
-            <FaQuoteRight className="w-4 h-4 text-white" />
-          </div>
         </div>
       </div>
-    </>
+
+      <Rate disabled defaultValue={rating} className="!text-sun-500 !text-base" />
+
+      <blockquote className="mt-5 flex-1 text-sm italic leading-relaxed text-[color:var(--muted)]">
+        “{content}”
+      </blockquote>
+
+      <figcaption className="mt-6 border-t border-ink-100 pt-5">
+        <p className="font-bold text-ink-900">{name}</p>
+        {role && (
+          <p className="mt-0.5 text-xs uppercase tracking-wider text-brand-500">
+            {role}
+          </p>
+        )}
+      </figcaption>
+
+      {/* Quote badge */}
+      <span
+        className="absolute -bottom-4 right-6 grid h-9 w-9 place-items-center
+                   rounded-full bg-brand-500 text-white shadow-lift
+                   transition-transform duration-300 ease-spring
+                   group-hover:scale-110 group-hover:-rotate-12">
+        <FaQuoteRight className="h-3.5 w-3.5" />
+      </span>
+    </motion.figure>
   );
 }
+
+export default TestimonialCard;

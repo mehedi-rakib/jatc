@@ -1,59 +1,46 @@
-import { motion } from "framer-motion";
-import { FaAngleRight } from "react-icons/fa";
+import CourseTemplate from "./CourseTemplate";
 
-const Short = () => {
+export default function Short() {
   return (
-    <div className=" py-12 px-6">
-      <motion.div
-        className="max-w-4xl mx-auto text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}>
-        <h2 className="text-4xl font-bold text-red-600 mb-6">
-          Short Intensive Course
-        </h2>
-        <p className="text-lg text-gray-700 mb-8">
-          This short intensive course is designed for those who want to quickly
-          learn essential Japanese phrases and vocabulary for travel or
-          short-term use. It covers speaking, reading, and basic cultural
-          awareness in a fun, interactive format.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Module 1 */}
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Survival Japanese
-            </h3>
-            <p className="text-gray-600 mb-4">
-              A crash course for travelers, teaching basic expressions and
-              polite phrases for everyday situations like ordering food or
-              asking for directions.
-            </p>
-            <div className="flex items-center text-red-600">
-              <FaAngleRight />
-              <span className="ml-2">Start Course</span>
-            </div>
-          </div>
-
-          {/* Module 2 */}
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold text-green-600 mb-4">
-              Japanese for Tourists
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Focuses on travel-specific vocabulary, common questions, and
-              phrases to help you navigate Japan with ease.
-            </p>
-            <div className="flex items-center text-red-600">
-              <FaAngleRight />
-              <span className="ml-2">Start Course</span>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
+    <CourseTemplate
+      eyebrow="Short Intensive"
+      title="Short Intensive Course"
+      image="/images/slider-2.jpg"
+      breadcrumbs={[{ label: "Courses" }, { label: "Short Intensive Course" }]}
+      intro="Fast-track the essentials. Built for anyone who needs practical Japanese quickly — for travel, work or an upcoming interview."
+      facts={[
+        { label: "Duration", value: "6–12 weeks" },
+        { label: "Level", value: "Beginner → N5" },
+        { label: "Batch size", value: "Small groups" },
+        { label: "Focus", value: "Speaking first" },
+      ]}
+      body="This short intensive course is designed for learners who want essential Japanese phrases and vocabulary fast. It covers speaking, reading and basic cultural awareness in a fun, interactive format. Classes stay small so you get to speak in every single session, and the vocabulary is chosen around the situations you will actually encounter."
+      modules={[
+        {
+          title: "Survival Japanese",
+          body: "A crash course in the basics: everyday expressions and polite phrases for ordering food, asking directions and handling daily situations.",
+        },
+        {
+          title: "Japanese for Tourists",
+          body: "Travel-specific vocabulary, the questions you will need most, and the phrases that make getting around Japan genuinely easy.",
+        },
+        {
+          title: "Workplace Basics",
+          body: "Greetings, self-introductions and the polite forms expected in Japanese professional settings.",
+        },
+        {
+          title: "Reading Hiragana & Katakana",
+          body: "Both syllabaries from scratch, so signs, menus and station boards stop being a guessing game.",
+        },
+      ]}
+      outcomes={[
+        "Introduce yourself confidently in Japanese",
+        "Read Hiragana and Katakana",
+        "Handle everyday conversations",
+        "Understand key cultural etiquette",
+        "Build a practical starter vocabulary",
+        "Be ready to continue to N5",
+      ]}
+    />
   );
-};
-
-export default Short;
+}

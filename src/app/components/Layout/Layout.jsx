@@ -1,16 +1,14 @@
-import React from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar";
-import MenuHeader from "../Header/MenuHeader";
-// import Preheader from "../Header/PreHeader";
+import PageTransition from "../ui/PageTransition";
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      {/* <Preheader /> */}
+    <div className="flex min-h-screen flex-col bg-[color:var(--background)]">
       <Navbar />
-      {/* <MenuHeader /> */}
-      <main className="min-h-screen">{children}</main>
+      <main id="main-content" className="flex-1">
+        <PageTransition>{children}</PageTransition>
+      </main>
       <Footer />
     </div>
   );

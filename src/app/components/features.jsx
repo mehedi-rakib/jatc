@@ -1,117 +1,119 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  FaRegNewspaper,
+  FaRegClock,
+  FaClipboardList,
+  FaAward,
+  FaArrowRight,
+} from "react-icons/fa";
+
+const features = [
+  {
+    title: "News",
+    href: "/news",
+    icon: FaRegNewspaper,
+    accent: "bg-sun-500",
+    iconColor: "text-sun-500",
+    description:
+      "Learn the easiest method of learning the Japanese language successfully.",
+  },
+  {
+    title: "Schedule",
+    href: "/long-course",
+    icon: FaRegClock,
+    accent: "bg-brand-500",
+    iconColor: "text-brand-500",
+    description:
+      "Morning, day and evening shifts so every student finds a slot that fits.",
+  },
+  {
+    title: "Notice Board",
+    href: "/notice",
+    icon: FaClipboardList,
+    accent: "bg-ink-700",
+    iconColor: "text-ink-700",
+    description:
+      "Admission is going on. Contact our program coordinator to apply today.",
+  },
+  {
+    title: "Achieve",
+    href: "/student-result",
+    icon: FaAward,
+    accent: "bg-sky-500",
+    iconColor: "text-sky-500",
+    description:
+      "Results for finished courses have been published — check yours now.",
+  },
+];
+
 export default function Features() {
   return (
-    <div className="container mx-auto px-4 -mt-24 relative z-10">
-      <div className="grid mx-auto lg:px-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
-        {/* NEWS*/}
-        <div className="relative pt-12 group">
-          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center z-20">
-            <svg
-              className="w-12 h-12 text-[#41C5E5]"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H15C16.1046 3 17 3.89543 17 5V7M19 21C17.8954 21 17 20.1046 17 19V7M19 21C20.1046 21 21 20.1046 21 19V9C21 7.89543 20.1046 7 19 7H17M9 7H13M9 11H13M9 15H13"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className="bg-[#FFC107] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">News</h3>
-            <p className="text-white/90 text-sm">
-              Learn the easiest method of learning Japanese language
-              successfully.
-            </p>
-          </div>
-        </div>
+    <div className="relative z-20 mx-auto mt-6 max-w-[90rem] px-4 md:mt-10 lg:px-12">
+      <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+        {features.map((feature, index) => {
+          const Icon = feature.icon;
 
-        {/* shedule  */}
-        <div className="relative pt-12 group">
-          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center z-20">
-            <svg
-              className="w-12 h-12 text-[#003B6D]"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 8V12L14 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className="bg-[#FF1943] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">Schedule</h3>
-            <p className="text-white/90 text-sm">
-              We have morning-day-evening shift for the convenient of our
-              students.
-            </p>
-          </div>
-        </div>
+          return (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.55,
+                delay: index * 0.09,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="relative pt-12">
+              <Link
+                href={feature.href}
+                className="group block focus:outline-none">
+                {/* Floating icon badge */}
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: -6 }}
+                  transition={{ type: "spring", stiffness: 320, damping: 16 }}
+                  className="absolute left-1/2 top-0 z-20 grid h-24 w-24 -translate-x-1/2
+                             place-items-center rounded-full bg-white shadow-lift
+                             ring-1 ring-ink-100">
+                  <Icon className={`h-10 w-10 ${feature.iconColor}`} />
+                </motion.div>
 
-        {/* Notice*/}
-        <div className="relative  pt-12 group">
-          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center z-20">
-            <svg
-              className="w-12 h-12 text-[#FF1943]"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 6.25V19.25M12 6.25C10.832 5.47703 9.24602 5 7.5 5C5.75398 5 4.16797 5.47703 3 6.25V19.25C4.16797 18.477 5.75398 18 7.5 18C9.24602 18 10.832 18.477 12 19.25M12 6.25C13.168 5.47703 14.754 5 16.5 5C18.246 5 19.832 5.47703 21 6.25V19.25C19.832 18.477 18.246 18 16.5 18C14.754 18 13.168 18.477 12 19.25"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className="bg-[#003B6D] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">Notice Board</h3>
-            <p className="text-white/90 text-sm">
-              Admission going on. Please contact with our program coordinator to
-              apply.
-            </p>
-          </div>
-        </div>
+                <div
+                  className={`${feature.accent} relative overflow-hidden rounded-2xl px-6
+                              pb-7 pt-16 text-center shadow-soft transition-all
+                              duration-300 ease-smooth group-hover:-translate-y-1.5
+                              group-hover:shadow-lift`}>
+                  {/* Sheen that sweeps across on hover */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 -translate-x-full
+                               bg-gradient-to-r from-transparent via-white/25
+                               to-transparent transition-transform duration-700
+                               ease-smooth group-hover:translate-x-full"
+                  />
 
-        {/* Result */}
-        <div className="relative pt-12 group">
-          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center z-20">
-            <svg
-              className="w-12 h-12 text-[#FFC107]"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className="bg-[#41C5E5] rounded-xl px-6 pt-14 pb-6 text-center shadow-md">
-            <h3 className="text-white text-xl font-bold mb-3">Achieve</h3>
-            <p className="text-white/90 text-sm">
-              The results of finished courses have been published. You can check
-              it now.
-            </p>
-          </div>
-        </div>
+                  <h3 className="text-xl font-bold text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/90">
+                    {feature.description}
+                  </p>
+
+                  <span
+                    className="mt-5 inline-flex items-center gap-2 text-xs font-bold
+                               uppercase tracking-wider text-white/90
+                               transition-all duration-300 group-hover:gap-3">
+                    Learn more
+                    <FaArrowRight className="h-3 w-3" />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

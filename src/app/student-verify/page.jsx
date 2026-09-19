@@ -1,6 +1,11 @@
 import VerifyID from "../components/Student/VerifyID";
-const StudentVerify = () => {
-  return <VerifyID />;
+
+export const metadata = {
+  title: "Verify Student ID",
+  description:
+    "Confirm that a Japan Ambition Training Center student enrolment is genuine.",
 };
 
-export default StudentVerify;
+export default function StudentVerifyPage() {
+  return <VerifyID />;
+}

@@ -1,174 +1,143 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AiOutlineLogin } from "react-icons/ai";
-import { Select } from "antd";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaFacebookF,
+  FaBars,
+  FaUserGraduate,
+} from "react-icons/fa";
 import CustomMenu from "./Header/CustomMenu";
+import MobileNav from "./Header/MobileNav";
 import SearchButton from "./Header/SearchButton";
+import { contactDetails } from "./Header/navigation";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
 
+  // Collapse the utility bar and tighten the header once the page scrolls
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 60);
+  });
+
+  // Close the drawer if the viewport grows into desktop layout
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const onResize = () => window.innerWidth >= 1024 && setMenuOpen(false);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo  flex-shrink-0*/}
-          <div className="">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                width={200}
-                height={70}
-                priority
-              />
-            </Link>
+    <>
+      {/* Utility bar — slides away as you scroll to reclaim vertical space */}
+      <motion.div
+        initial={false}
+        animate={{ height: scrolled ? 0 : 40, opacity: scrolled ? 0 : 1 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="hidden overflow-hidden bg-ink-700 text-white lg:block">
+        <div className="mx-auto flex h-10 max-w-[90rem] items-center justify-between px-6 text-xs">
+          <div className="flex items-center gap-6">
+            <a
+              href={`tel:${contactDetails.hotline.replace(/-/g, "")}`}
+              className="flex items-center gap-2 text-white transition-colors hover:text-sun-400">
+              <FaPhoneAlt className="h-3 w-3" />
+              Hotline: {contactDetails.hotline}
+            </a>
+            <a
+              href={`mailto:${contactDetails.email}`}
+              className="flex items-center gap-2 text-white transition-colors hover:text-sun-400">
+              <FaEnvelope className="h-3 w-3" />
+              {contactDetails.email}
+            </a>
           </div>
+          <div className="flex items-center gap-4">
+            <span className="text-white">{contactDetails.address}</span>
+            <a
+              href={contactDetails.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="grid h-6 w-6 place-items-center rounded-full bg-white/15
+                         text-white transition-colors hover:bg-[#1877f2]">
+              <FaFacebookF className="h-2.5 w-2.5" />
+            </a>
+          </div>
+        </div>
+      </motion.div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center  justify-center flex-1">
-            {/* <CustomMenu isMobile={false} onItemClick={() => {}} /> */}
-          </nav>
-
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <div className="mx-auto">
-              <p className="text-red-500 font-semibold text-sm">
-                Hot line: 01715-458036
-              </p>
-            </div>
-            {/* <SearchButton /> */}
-            <Select
-              defaultValue="en"
-              style={{ width: 90 }}
-              variant="unstyled"
-              className="text-sm">
-              <Select.Option value="en">English</Select.Option>
-              <Select.Option value="jp">Japanese</Select.Option>
-              <Select.Option value="bn">Bangla</Select.Option>
-            </Select>
-            <button
-              className="p-2 border-gradient-to-r border-2  text-white bg-green-400 hover:bg-red-500 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              aria-label="Search">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
-
+      <header
+        className={`sticky top-0 z-[55] transition-all duration-300 ease-smooth ${
+          scrolled
+            ? "glass border-b border-ink-100 shadow-soft"
+            : "border-b border-ink-100/70 bg-white"
+        }`}>
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={false}
+            animate={{ height: scrolled ? 64 : 80 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center justify-between gap-4">
+            {/* Logo */}
             <Link
               href="/"
-              className="bg-red-500 hover:bg-green-400 border-gradient-to-r border-2  rounded-2xl items-center justify-center gap-2 font-semibold  text-black px-2 py-2  text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
-              <div className="flex space-x-2 ">
-                <AiOutlineLogin className="text-lg text-white w-5 h-5" />
-                <span className="text-white text-md  ">Login</span>
-              </div>
+              className="group flex shrink-0 items-center"
+              aria-label="Japan Ambition Training Center — home">
+              <motion.span
+                animate={{ scale: scrolled ? 0.88 : 1 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="origin-left">
+                <Image
+                  src="/logo.png"
+                  alt="Japan Ambition Training Center"
+                  width={200}
+                  height={70}
+                  priority
+                  className="h-12 w-auto object-contain transition-transform
+                             duration-300 group-hover:scale-105"
+                />
+              </motion.span>
             </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-expanded={isMenuOpen}>
-              <span className="sr-only">Open main menu</span>
-              {isMenuOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
+            {/* Desktop nav */}
+            <nav
+              aria-label="Main navigation"
+              className="hidden flex-1 justify-center xl:flex">
+              <CustomMenu />
+            </nav>
 
-      {/* Mobile Menu */}
-      <div className={`lg:hidden ${isMenuOpen ? "block" : "hidden"}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          <CustomMenu isMobile={true} onItemClick={closeMenu} />
-          <div className="mt-4 space-y-2">
-            <Select
-              defaultValue="en"
-              style={{ width: "100%" }}
-              variant={true}
-              className="text-sm"
-              onChange={closeMenu}>
-              <Select.Option value="en">English</Select.Option>
-              <Select.Option value="jp">Japanese</Select.Option>
-            </Select>
-            <button
-              className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-              aria-label="Search"
-              onClick={closeMenu}>
-              Search
-            </button>
-            <Link
-              href="/s"
-              className="bg-[#FFC107] flex items-center justify-center gap-2 font-semibold hover:bg-white hover:text-blue-600 text-black px-4 py-2 rounded-md text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
-              onClick={closeMenu}>
-              <AiOutlineLogin className="text-lg" />
-              <span>Login</span>
-            </Link>
-          </div>
+            {/* Actions */}
+            <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+              <SearchButton className="hidden sm:grid" />
+
+
+              <Link href="/student-apply" className="btn-primary hidden !px-5 !py-2.5 sm:inline-flex">
+                <FaUserGraduate className="h-3.5 w-3.5" />
+                Apply Now
+              </Link>
+
+              {/* Mobile menu trigger */}
+              <button
+                type="button"
+                onClick={() => setMenuOpen(true)}
+                aria-label="Open menu"
+                aria-expanded={menuOpen}
+                className="grid h-10 w-10 place-items-center rounded-full bg-ink-50
+                           text-ink-800 transition-colors hover:bg-brand-500
+                           hover:text-white xl:hidden">
+                <FaBars className="h-4 w-4" />
+              </button>
+            </div>
+          </motion.div>
         </div>
-      </div>
-      <nav className="hidden lg:flex items-center  bg-slate-100 justify-start pl-6 py-2 flex-1">
-        <CustomMenu isMobile={false} onItemClick={() => {}} />
-      </nav>
-    </header>
+      </header>
+
+      <MobileNav open={menuOpen} onClose={() => setMenuOpen(false)} />
+    </>
   );
-};
-
-export default Navbar;
+}
